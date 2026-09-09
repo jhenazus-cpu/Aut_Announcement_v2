@@ -1,0 +1,32 @@
+{
+  "name": "Comunicado desde API prueba nueva de comunicados desde codigo",
+  "description": null,
+  "appliesTo": [
+    0, 
+    1,
+    2,
+    3
+  ],
+  "programs": [
+    {
+      "code": "1331",
+      "name": "Pruebas de Software JCPM"
+    }
+  ],
+  "grades": [
+    {
+        "id": 1
+    }
+],
+"campusSchedules": [
+    {
+        "id": 1,
+        "name": "Principal - Mañana"
+    }
+],
+  "startDate": "2026-09-09",
+  "endDate": null,
+  "isActive": true,
+  "periodId": 21,
+  "userPersonCode": null
+}

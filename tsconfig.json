@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "paths": {
+      "@payloads/*": ["./payloads/*"],
+      "@create/*": ["./payloads/Create/*"],
+      "@update/*": ["./payloads/Update/*"],
+      "@delete/*": ["./payloads/Delete/*"],
+    },
+    "types": ["node", "@playwright/test"],
+    "resolveJsonModule": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "strict": true
+  }
+}
