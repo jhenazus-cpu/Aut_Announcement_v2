@@ -63,6 +63,11 @@ export interface AttachmentResponse {
   statusCode: number
 }
 
+export interface GetDetailsAttachmentResponse {
+  data: Item
+  statusCode: number
+}
+
 export interface Data {
   items: Item[]
   totalCount: number
