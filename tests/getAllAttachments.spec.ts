@@ -79,7 +79,7 @@ test.describe("Attachments API", () => {
     expect(AnnouncementNotFound.error.type).toBe("NOT_FOUND");
     expect(AnnouncementNotFound.error.code).toBe("HTTP.NOT_FOUND");
     expect(AnnouncementNotFound.error.message).toBe(
-      `Announcement with id '${testConfig.notFoundAnnouncementId}' was not found.`,
+      `Announcement with id '${testConfig.notFoundAttachmentId}' was not found.`,
     );
   });
 });

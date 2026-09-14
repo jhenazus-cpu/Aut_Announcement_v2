@@ -1,0 +1,15 @@
+[15:46:15.351] INFO:  
+╔════════════════════════════════════════════════════════════╗
+║ API REQUEST                                                ║
+╠════════════════════════════════════════════════════════════╣
+  URL:         (DELETE) http://localhost:8443/announcements/52/attachments/5596?EntityCode=784324630431
+  Status:      204 No Content
+  Headers:     {
+                 "date": "Mon, 14 Sep 2026 20:46:15 GMT",
+                 "connection": "keep-alive",
+                 "server": "Kestrel",
+                 "x-trace-id": "5bd0679bcfc6169bcd6ded4c690d9cb0"
+               }
+  Body:        
+╚════════════════════════════════════════════════════════════╝
+    
