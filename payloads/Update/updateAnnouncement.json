@@ -1,6 +1,6 @@
 {
-  "name": "Prueba de comunicado editado desde API segunda vez",
-  "description": "Esta es una nueva description para validar el tema de las apis en comunicados y validar como funcionan, la primera fue desde postman ahoraa quiero ver si desde codigo lo hace",
+  "name": "Prueba de comunicado modificado desde la automatización",
+  "description": "Prueba para modificar un comunicado",
   "startDate": null,
   "endDate": null,
   "isActive": true,
@@ -23,12 +23,6 @@
     {
         "code": "BBT",
         "name": "Burbujita"
-    }
-  ],
-  "grades": [
-    {
-        "id": 1,
-        "name": "Principal - Mañana"
     }
   ]
 }

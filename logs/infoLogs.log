@@ -1,109 +1,95 @@
-[14:45:16.742] INFO:  
+[17:15:41.453] INFO:  
 ╔════════════════════════════════════════════════════════════╗
 ║ API REQUEST                                                ║
 ╠════════════════════════════════════════════════════════════╣
-  URL:         (GET) http://localhost:8443/announcements/111111?EntityCode=784324630431
-  Status:      404 Not Found
+  URL:         (POST) http://localhost:8443/announcements?EntityCode=784324630431
+  Status:      201 Created
   Headers:     {
-                 "date": "Wed, 16 Sep 2026 19:45:17 GMT",
+                 "date": "Wed, 16 Sep 2026 22:15:42 GMT",
                  "content-type": "application/json; charset=utf-8",
                  "transfer-encoding": "chunked",
                  "connection": "keep-alive",
                  "server": "Kestrel",
-                 "x-trace-id": "3442e9446900491ec3054b3873d83559"
+                 "x-trace-id": "9006c8b968486b21c88a8b0e4ebcf7cd"
                }
   Body:        {
-                 "error": {
-                   "type": "NOT_FOUND",
-                   "code": "HTTP.NOT_FOUND",
-                   "message": "Announcement with id '111111' was not found.",
-                   "details": []
+                 "data": {
+                   "id": 198,
+                   "name": "Comunicado desde API prueba nueva de comunicados desde codigo - 1789596941262",
+                   "description": "Esto es una prueba de creación para los comunicados desde código, para validar que la creación de comunicados funcione correctamente desde código y no solo desde postman",
+                   "appliesTo": [
+                     0,
+                     1,
+                     2,
+                     3
+                   ],
+                   "programs": [
+                     {
+                       "code": "1331",
+                       "name": ""
+                     }
+                   ],
+                   "grades": [],
+                   "startDate": null,
+                   "endDate": null,
+                   "campusSchedules": [],
+                   "isActive": true,
+                   "createdAt": "2026-09-16T22:15:42.2259626Z",
+                   "updatedAt": null,
+                   "period": {
+                     "id": 21,
+                     "name": ""
+                   }
                  },
-                 "statusCode": 404
+                 "statusCode": 201
                }
 ╚════════════════════════════════════════════════════════════╝
     
-                      "uploadedAt": "2026-09-07T11:31:48.183",
-                       "thumbnailPath": null,
-                       "categoryCode": "24",
-                       "referenceCode": "47",
-                       "metadata": null,
-                       "embedded": false
-                     },
-                     {
-                       "id": 5589,
-                       "fileName": "13_CLASE_FDM_2026_I.pdf",
-                       "filePath": "784324630431/comunicados/47/13_CLASE_FDM_2026_I.pdf#_public",
-                       "sizeInBytes": 5677369,
-                       "contentType": "application/pdf",
-                       "extension": "pdf",
-                       "uploadedAt": "2026-09-07T11:31:48.26",
-                       "thumbnailPath": null,
-                       "categoryCode": "24",
-                       "referenceCode": "47",
-                       "metadata": null,
-                       "embedded": false
-                     },
-                     {
-                       "id": 5590,
-                       "fileName": "9_CLASE_FDM_2026_I.pdf",
-                       "filePath": "784324630431/comunicados/47/9_CLASE_FDM_2026_I.pdf#_public",
-                       "sizeInBytes": 324105,
-                       "contentType": "application/pdf",
-                       "extension": "pdf",
-                       "uploadedAt": "2026-09-07T11:31:48.323",
-                       "thumbnailPath": null,
-                       "categoryCode": "24",
-                       "referenceCode": "47",
-                       "metadata": null,
-                       "embedded": false
-                     },
-                     {
-                       "id": 5591,
-                       "fileName": "Certificado.pdf",
-                       "filePath": "784324630431/comunicados/47/Certificado.pdf#_public",
-                       "sizeInBytes": 108171,
-                       "contentType": "application/pdf",
-                       "extension": "pdf",
-                       "uploadedAt": "2026-09-07T11:31:48.387",
-                       "thumbnailPath": null,
-                       "categoryCode": "24",
-                       "referenceCode": "47",
-                       "metadata": null,
-                       "embedded": false
-                     },
-                     {
-                       "id": 5592,
-                       "fileName": "ConsolidadoNotasCuantitativo (4).pdf",
-                       "filePath": "784324630431/comunicados/47/ConsolidadoNotasCuantitativo_4.pdf#_public",
-                       "sizeInBytes": 62007,
-                       "contentType": "application/pdf",
-                       "extension": "pdf",
-                       "uploadedAt": "2026-09-07T11:31:48.45",
-                       "thumbnailPath": null,
-                       "categoryCode": "24",
-                       "referenceCode": "47",
-                       "metadata": null,
-                       "embedded": false
-                     },
-                     {
-                       "id": 5593,
-                       "fileName": "ReporteNotasCreditoMediaCarta.docx",
-                       "filePath": "784324630431/comunicados/47/ReporteNotasCreditoMediaCarta.docx#_public",
-                       "sizeInBytes": 27057,
-                       "contentType": "application/vnd.openxmlformats-officedocument.word",
-                       "extension": "docx",
-                       "uploadedAt": "2026-09-07T11:31:48.497",
-                       "thumbnailPath": null,
-                       "categoryCode": "24",
-                       "referenceCode": "47",
-                       "metadata": null,
-                       "embedded": false
-                     }
-                   ],
-                   "totalCount": 6
-                 },
-                 "statusCode": 200
+[17:15:41.582] INFO:  
+╔════════════════════════════════════════════════════════════╗
+║ API REQUEST                                                ║
+╠════════════════════════════════════════════════════════════╣
+  URL:         (PUT) http://localhost:8443/announcements/198?EntityCode=784324630431
+  Status:      400 Bad Request
+  Headers:     {
+                 "date": "Wed, 16 Sep 2026 22:15:42 GMT",
+                 "content-type": "application/json; charset=utf-8",
+                 "transfer-encoding": "chunked",
+                 "connection": "keep-alive",
+                 "server": "Kestrel",
+                 "x-trace-id": "5d4a0c821f37b9804aa12ada5cf7af73"
                }
+  Body:        {
+                 "error": {
+                   "type": "VALIDATION",
+                   "code": "HTTP.VALIDATION",
+                   "message": "Validation failed",
+                   "details": [
+                     {
+                       "property": "appliesTo",
+                       "value": [],
+                       "errors": [
+                         "AppliesTo must contain at least one value."
+                       ]
+                     }
+                   ]
+                 },
+                 "statusCode": 400
+               }
+╚════════════════════════════════════════════════════════════╝
+    
+[17:15:41.712] INFO:  
+╔════════════════════════════════════════════════════════════╗
+║ API REQUEST                                                ║
+╠════════════════════════════════════════════════════════════╣
+  URL:         (DELETE) http://localhost:8443/announcements/198?EntityCode=784324630431
+  Status:      204 No Content
+  Headers:     {
+                 "date": "Wed, 16 Sep 2026 22:15:42 GMT",
+                 "connection": "keep-alive",
+                 "server": "Kestrel",
+                 "x-trace-id": "20e085090be72ceaf79706718ee53cf4"
+               }
+  Body:        
 ╚════════════════════════════════════════════════════════════╝
     

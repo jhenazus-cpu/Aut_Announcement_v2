@@ -58,7 +58,8 @@ export const validationErrorSchema = {
                   { type: 'string' },
                   { type: 'number' },
                   { type: 'boolean' },
-                  { type: 'null' }
+                  { type: 'null' },
+                  { type: "array" },
                 ]
               },
 

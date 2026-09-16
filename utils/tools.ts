@@ -22,7 +22,23 @@ type AnnouncementFixtures = {
 // cualquiera de ellas puede ejecutarse de forma aislada y no depende del caso Create.
 export const test = base.extend<AnnouncementFixtures>({
   createdAnnouncementId: async ({ request }, use) => {
-    await use(await createAnnouncementForTest(request));
+    const announcementId = await createAnnouncementForTest(request);
+
+    try {
+      await use(announcementId);
+    } finally {
+      const response = await request.delete(
+        `announcements/${announcementId}?EntityCode=${testConfig.entityCode}`,
+      );
+      await logApi(response, "DELETE");
+
+      //Acepta 204 o 404, porque algunas pruebas pueden eliminarlo previamente.
+      if (![204, 404].includes(response.status())) {
+        throw new Error(
+          `The test announcement ${announcementId} could not be deleted. Status: ${response.status()}`,
+        );
+      }
+    }
   },
 });
 

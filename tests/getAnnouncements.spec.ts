@@ -16,7 +16,6 @@ import Ajv from "ajv";
 import { getAllAnnouncementsSchema } from "../utils/schemas/getAllAnnouncements.schema";
 import { getAnnouncementByIdSchema } from "../utils/schemas/getAnnouncementById.schema";
 import { errorSchema } from "../utils/schemas/error.schema";
-import { domainValidationErrorSchema } from "../utils/schemas/domainValidationError.schema";
 
 // Escenarios de prueba para la API de comunicados
 test.describe("Announcements API", () => {
