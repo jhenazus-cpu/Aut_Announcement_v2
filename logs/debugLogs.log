@@ -1,0 +1,109 @@
+[14:45:16.742] INFO:  
+╔════════════════════════════════════════════════════════════╗
+║ API REQUEST                                                ║
+╠════════════════════════════════════════════════════════════╣
+  URL:         (GET) http://localhost:8443/announcements/111111?EntityCode=784324630431
+  Status:      404 Not Found
+  Headers:     {
+                 "date": "Wed, 16 Sep 2026 19:45:17 GMT",
+                 "content-type": "application/json; charset=utf-8",
+                 "transfer-encoding": "chunked",
+                 "connection": "keep-alive",
+                 "server": "Kestrel",
+                 "x-trace-id": "3442e9446900491ec3054b3873d83559"
+               }
+  Body:        {
+                 "error": {
+                   "type": "NOT_FOUND",
+                   "code": "HTTP.NOT_FOUND",
+                   "message": "Announcement with id '111111' was not found.",
+                   "details": []
+                 },
+                 "statusCode": 404
+               }
+╚════════════════════════════════════════════════════════════╝
+    
+                      "uploadedAt": "2026-09-07T11:31:48.183",
+                       "thumbnailPath": null,
+                       "categoryCode": "24",
+                       "referenceCode": "47",
+                       "metadata": null,
+                       "embedded": false
+                     },
+                     {
+                       "id": 5589,
+                       "fileName": "13_CLASE_FDM_2026_I.pdf",
+                       "filePath": "784324630431/comunicados/47/13_CLASE_FDM_2026_I.pdf#_public",
+                       "sizeInBytes": 5677369,
+                       "contentType": "application/pdf",
+                       "extension": "pdf",
+                       "uploadedAt": "2026-09-07T11:31:48.26",
+                       "thumbnailPath": null,
+                       "categoryCode": "24",
+                       "referenceCode": "47",
+                       "metadata": null,
+                       "embedded": false
+                     },
+                     {
+                       "id": 5590,
+                       "fileName": "9_CLASE_FDM_2026_I.pdf",
+                       "filePath": "784324630431/comunicados/47/9_CLASE_FDM_2026_I.pdf#_public",
+                       "sizeInBytes": 324105,
+                       "contentType": "application/pdf",
+                       "extension": "pdf",
+                       "uploadedAt": "2026-09-07T11:31:48.323",
+                       "thumbnailPath": null,
+                       "categoryCode": "24",
+                       "referenceCode": "47",
+                       "metadata": null,
+                       "embedded": false
+                     },
+                     {
+                       "id": 5591,
+                       "fileName": "Certificado.pdf",
+                       "filePath": "784324630431/comunicados/47/Certificado.pdf#_public",
+                       "sizeInBytes": 108171,
+                       "contentType": "application/pdf",
+                       "extension": "pdf",
+                       "uploadedAt": "2026-09-07T11:31:48.387",
+                       "thumbnailPath": null,
+                       "categoryCode": "24",
+                       "referenceCode": "47",
+                       "metadata": null,
+                       "embedded": false
+                     },
+                     {
+                       "id": 5592,
+                       "fileName": "ConsolidadoNotasCuantitativo (4).pdf",
+                       "filePath": "784324630431/comunicados/47/ConsolidadoNotasCuantitativo_4.pdf#_public",
+                       "sizeInBytes": 62007,
+                       "contentType": "application/pdf",
+                       "extension": "pdf",
+                       "uploadedAt": "2026-09-07T11:31:48.45",
+                       "thumbnailPath": null,
+                       "categoryCode": "24",
+                       "referenceCode": "47",
+                       "metadata": null,
+                       "embedded": false
+                     },
+                     {
+                       "id": 5593,
+                       "fileName": "ReporteNotasCreditoMediaCarta.docx",
+                       "filePath": "784324630431/comunicados/47/ReporteNotasCreditoMediaCarta.docx#_public",
+                       "sizeInBytes": 27057,
+                       "contentType": "application/vnd.openxmlformats-officedocument.word",
+                       "extension": "docx",
+                       "uploadedAt": "2026-09-07T11:31:48.497",
+                       "thumbnailPath": null,
+                       "categoryCode": "24",
+                       "referenceCode": "47",
+                       "metadata": null,
+                       "embedded": false
+                     }
+                   ],
+                   "totalCount": 6
+                 },
+                 "statusCode": 200
+               }
+╚════════════════════════════════════════════════════════════╝
+    

@@ -9,10 +9,13 @@ import {
 } from "../utils/type";
 import { AnnouncementNotFound } from "../utils/typeById";
 
+
+
 test.describe("Attachments API", () => {
   //Casos de prueba para obtener todo los adjuntos
 
   test("Get all the attachments", async ({ request }) => {
+
     const response = await request.get(
       `announcements/${testConfig.announcementIdAttachmentId}/attachments?EntityCode=${testConfig.entityCode}`,
     );
