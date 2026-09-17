@@ -9,12 +9,21 @@ import {
 } from "../utils/type";
 import { AnnouncementNotFound } from "../utils/typeById";
 
+// Importar los Scheman de las respuestas
+import Ajv from "ajv";
+import { getAnnouncementAttachmentsSchema } from "../utils/schemas/getAnnouncementAttachments.schema";
+import { errorSchema } from "../utils/schemas/error.schema";
+
+
 
 
 test.describe("Attachments API", () => {
   //Casos de prueba para obtener todo los adjuntos
 
   test("Get all the attachments", async ({ request }) => {
+    
+    const ajv = new Ajv();
+    const validateSchema = ajv.compile(getAnnouncementAttachmentsSchema);
 
     const response = await request.get(
       `announcements/${testConfig.announcementIdAttachmentId}/attachments?EntityCode=${testConfig.entityCode}`,
@@ -25,52 +34,17 @@ test.describe("Attachments API", () => {
 
     const attachmentResponse = (await response.json()) as AttachmentResponse;
     
-    // Validar la raiz de la respuesta
-    expect(attachmentResponse).toMatchObject({
-      data: {
-        items: expect.any(Array),
-        totalCount: expect.any(Number),
-      },
-      statusCode: expect.any(Number),
-    });
+    //Validar la estructura de la respuesta
+    expect(validateSchema(attachmentResponse)).toBeTruthy();
 
-    //Validar todos los elementos del array
-    attachmentResponse.data.items.forEach((attachment) => {
-      expect(attachmentResponse.data.items[0]).toMatchObject({
-        id: expect.any(Number),
-        fileName: expect.any(String),
-        filePath: expect.any(String),
-        sizeInBytes: expect.any(Number),
-        contentType: expect.any(String),
-        extension: expect.any(String),
-        uploadedAt: expect.any(String),
-        embedded: expect.any(Boolean),
-      });
-
-      expect(attachment).toHaveProperty("thumbnailPath");
-      expect(
-        attachment.thumbnailPath === null ||
-          typeof attachment.thumbnailPath === "string",
-      ).toBe(true);
-      expect(attachment).toHaveProperty("categoryCode");
-      expect(
-        attachment.categoryCode === null ||
-          typeof attachment.categoryCode === "string",
-      ).toBe(true);
-      expect(attachment).toHaveProperty("referenceCode");
-      expect(
-        attachment.referenceCode === null ||
-          typeof attachment.referenceCode === "string",
-      ).toBe(true);
-      expect(attachment).toHaveProperty("metadata");
-      expect(
-        attachment.metadata === null || typeof attachment.metadata === "string",
-      ).toBe(true);
-    });
   });
 
   // Caso de prueba para obtener un adjunto por ID que no existe
   test("Get attachments by ID not found", async ({ request }) => {
+    
+    const ajv = new Ajv();
+    const validateSchema = ajv.compile(errorSchema);
+    
     const response = await request.get(
       `announcements/${testConfig.notFoundAttachmentId}?EntityCode=${testConfig.entityCode}`,
     );
@@ -79,6 +53,11 @@ test.describe("Attachments API", () => {
 
     const AnnouncementNotFound =
       (await response.json()) as AnnouncementNotFound;
+
+      
+    //Validar la estructura de la respuesta
+    expect(validateSchema(AnnouncementNotFound)).toBeTruthy();
+
     expect(AnnouncementNotFound.error.type).toBe("NOT_FOUND");
     expect(AnnouncementNotFound.error.code).toBe("HTTP.NOT_FOUND");
     expect(AnnouncementNotFound.error.message).toBe(

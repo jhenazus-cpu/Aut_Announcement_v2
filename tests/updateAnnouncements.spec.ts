@@ -17,7 +17,6 @@ import updateAnnouncementWithoutValueAppliesTo from "@update/updateAnnouncementW
 import Ajv from "ajv";
 import { updateAnnouncementSchema } from "../utils/schemas/updateAnnouncement.schema";
 import { validationErrorSchema } from "../utils/schemas/validationError.schema";
-import { domainValidationErrorSchema } from "../utils/schemas/domainValidationError.schema";
 
 // Escenarios de prueba para la API de comunicados
 test.describe("Update Announcements API", () => {
