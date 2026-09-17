@@ -1,0 +1,25 @@
+[09:13:51.570] INFO:  
+╔════════════════════════════════════════════════════════════╗
+║ API REQUEST                                                ║
+╠════════════════════════════════════════════════════════════╣
+  URL:         (GET) http://localhost:8443/announcements/47/attachments/111111?EntityCode=784324630431
+  Status:      404 Not Found
+  Headers:     {
+                 "date": "Thu, 17 Sep 2026 14:13:51 GMT",
+                 "content-type": "application/json; charset=utf-8",
+                 "transfer-encoding": "chunked",
+                 "connection": "keep-alive",
+                 "server": "Kestrel",
+                 "x-trace-id": "75c7901d9e7c8e6a7a9bef50aa8ee42a"
+               }
+  Body:        {
+                 "error": {
+                   "type": "NOT_FOUND",
+                   "code": "HTTP.NOT_FOUND",
+                   "message": "Attachment with id '111111' was not found.",
+                   "details": []
+                 },
+                 "statusCode": 404
+               }
+╚════════════════════════════════════════════════════════════╝
+    

@@ -8,10 +8,18 @@ import { GetDetailsAttachmentResponse } from "../utils/type";
 import { AnnouncementNotFound } from "../utils/typeById";
 import { validateAttachmentDetailContract } from "../utils/tools";
 
+// Importar los Scheman de las respuestas
+import Ajv from "ajv";
+import { getAnnouncementAttachmentDetailSchema } from "../utils/schemas/getAnnouncementAttachmentDetail.schema";
+import { errorSchema } from "../utils/schemas/error.schema";
+
 //Casos de prueba para obtener el detalle de adjunto
 test.describe("Get Details Attachments API", () => {
   // Caso de prueba obtener detalle adjunto
   test("Get Announcement Attachment detail", async ({ request }) => {
+    const ajv = new Ajv();
+    const validateSchema = ajv.compile(getAnnouncementAttachmentDetailSchema);
+
     const response = await request.get(
       `announcements/${testConfig.announcementIdAttachmentId}/attachments/${testConfig.attachmentIdDetails}?EntityCode=${testConfig.entityCode}`,
     );
@@ -23,13 +31,20 @@ test.describe("Get Details Attachments API", () => {
       (await response.json()) as GetDetailsAttachmentResponse;
 
     // Verificar que la respuesta contenga los campos esperados
-    validateAttachmentDetailContract(GetDetailsAttachmentResponse);
+    //validateAttachmentDetailContract(GetDetailsAttachmentResponse);
+
+    //Validar la estructura de la respuesta
+    expect(validateSchema(GetDetailsAttachmentResponse)).toBeTruthy();
   });
 
   //Caso de prueba consultar adjunto no existente
   test("Get Announcement Attachment detail by ID not found", async ({
     request,
   }) => {
+    
+    const ajv = new Ajv();
+    const validateSchema = ajv.compile(errorSchema);
+    
     const response = await request.get(
       `announcements/${testConfig.announcementIdAttachmentId}/attachments/${testConfig.notFoundAttachmentId}?EntityCode=${testConfig.entityCode}`,
     );
@@ -39,6 +54,10 @@ test.describe("Get Details Attachments API", () => {
 
     const AnnouncementNotFound =
       (await response.json()) as AnnouncementNotFound;
+
+    //Validar la estructura de la respuesta
+    expect(validateSchema(AnnouncementNotFound)).toBeTruthy();
+
     expect(AnnouncementNotFound.error.type).toBe("NOT_FOUND");
     expect(AnnouncementNotFound.error.code).toBe("HTTP.NOT_FOUND");
     expect(AnnouncementNotFound.error.message).toBe(
