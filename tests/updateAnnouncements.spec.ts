@@ -9,9 +9,11 @@ import { AnnouncementNotFound } from "../utils/typeById";
 import { test } from "../utils/tools";
 
 // Importar los payloads de prueba
-import updateAnnouncement from "@update/updateAnnouncement.json";
-import updateAnnouncementWithoutAppliesTo from "@update/updateAnnouncementwithoutAppliesTo.json";
-import updateAnnouncementWithoutValueAppliesTo from "@update/updateAnnouncementWithoutValueAppliesTo.json";
+import {
+  updateAnnouncement,
+  updateAnnouncementWithoutAppliesTo,
+  updateAnnouncementWithoutValueAppliesTo,
+} from "@update/updateAnnouncementPayloads";
 
 // Importar los Scheman de las respuestas
 import Ajv from "ajv";
@@ -26,7 +28,7 @@ test.describe("Update Announcements API", () => {
     const requestOptions = {
       data: updateAnnouncement,
     };
-
+    
     const ajv = new Ajv();
     const validateSchema = ajv.compile(updateAnnouncementSchema);
 

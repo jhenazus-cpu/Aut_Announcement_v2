@@ -59,7 +59,7 @@ export const validationErrorSchema = {
                   { type: 'number' },
                   { type: 'boolean' },
                   { type: 'null' },
-                  { type: "array" },
+                  { type: 'array' }
                 ]
               },
 
@@ -71,6 +71,22 @@ export const validationErrorSchema = {
                 items: {
                   type: 'string'
                 }
+              },
+
+              attributes: {
+                type: 'object',
+
+                properties: {
+                  missing: {
+                    type: 'array',
+
+                    items: {
+                      type: 'string'
+                    }
+                  }
+                },
+
+                additionalProperties: true
               }
             }
           }

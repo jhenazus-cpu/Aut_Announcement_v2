@@ -1,25 +1,67 @@
-[12:01:38.014] INFO:  
+[15:33:41.202] INFO:  
 ╔════════════════════════════════════════════════════════════╗
 ║ API REQUEST                                                ║
 ╠════════════════════════════════════════════════════════════╣
-  URL:         (DELETE) http://localhost:8443/announcements/1111?EntityCode=784324630431
-  Status:      404 Not Found
+  URL:         (POST) http://localhost:8443/announcements?EntityCode=784324630431
+  Status:      400 Bad Request
   Headers:     {
-                 "date": "Thu, 17 Sep 2026 17:01:38 GMT",
+                 "date": "Thu, 17 Sep 2026 20:33:41 GMT",
                  "content-type": "application/json; charset=utf-8",
                  "transfer-encoding": "chunked",
                  "connection": "keep-alive",
                  "server": "Kestrel",
-                 "x-trace-id": "71ecbb11bb5b320e0a6803fb3e8a0123"
+                 "x-trace-id": "dc7fd06137d128e8c2a7ac94e08d1355"
                }
   Body:        {
                  "error": {
-                   "type": "NOT_FOUND",
-                   "code": "HTTP.NOT_FOUND",
-                   "message": "Announcement with id '1111' was not found.",
-                   "details": []
+                   "type": "DOMAIN_VALIDATION",
+                   "code": "HTTP.DOMAIN_VALIDATION",
+                   "message": "Domain validation failed.",
+                   "details": [
+                     {
+                       "property": "programs[0].Code",
+                       "errors": [
+                         "Program code is required."
+                       ]
+                     }
+                   ]
                  },
-                 "statusCode": 404
+                 "statusCode": 400
+               }
+╚════════════════════════════════════════════════════�[15:33:41.[15:33:41.381] INFO:  [15:33:41.461] INFO:  
+╔════════════════════════════════════════════════════════════╗
+║ API REQUEST                                                ║
+╠════════════════════════════════════════════════════════════╣
+  URL:         (POST) http://localhost:8443/announcements?EntityCode=784324630431
+  Status:      400 Bad Request
+  Headers:     {
+                 "date": "Thu, 17 Sep 2026 20:33:42 GMT",
+                 "content-type": "application/json; charset=utf-8",
+                 "transfer-encoding": "chunked",
+                 "connection": "keep-alive",
+                 "server": "Kestrel",
+                 "x-trace-id": "9916202df9e87ba91d06e7dffb6caddc"
+               }
+  Body:        {
+                 "error": {
+                   "type": "VALIDATION",
+                   "code": "HTTP.VALIDATION",
+                   "message": "Validation failed",
+                   "details": [
+                     {
+                       "property": "programs",
+                       "errors": [
+                         "The following programs either do not exist, are not active, or do not have an associated curriculum: 325741."
+                       ],
+                       "attributes": {
+                         "missing": [
+                           "325741"
+                         ]
+                       }
+                     }
+                   ]
+                 },
+                 "statusCode": 400
                }
 ╚════════════════════════════════════════════════════════════╝
     

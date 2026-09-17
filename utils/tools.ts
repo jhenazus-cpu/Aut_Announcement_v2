@@ -3,7 +3,7 @@ import { test as base, expect, APIRequestContext } from "@playwright/test";
 import { logApi } from "./apiLogger";
 import { testConfig } from "./testConfig";
 
-import createAnnouncement from "@create/createAnnouncement.json";
+import { createAnnouncement } from "@create/createAnnouncementPayloads";
 
 // Definir la interfaz para la respuesta de creación de comunicado
 interface CreateAnnouncementResponse {
