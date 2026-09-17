@@ -44,7 +44,6 @@ test.describe("Get Details Attachments API", () => {
     
     const ajv = new Ajv();
     const validateSchema = ajv.compile(errorSchema);
-    
     const response = await request.get(
       `announcements/${testConfig.announcementIdAttachmentId}/attachments/${testConfig.notFoundAttachmentId}?EntityCode=${testConfig.entityCode}`,
     );

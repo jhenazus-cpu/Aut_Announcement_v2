@@ -57,7 +57,8 @@ export const getAnnouncementAttachmentDetailSchema = {
         },
 
         uploadedAt: {
-          type: 'string'
+            type: 'string',
+            pattern: '^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}$',
         },
 
         thumbnailPath: {
@@ -65,7 +66,10 @@ export const getAnnouncementAttachmentDetailSchema = {
         },
 
         categoryCode: {
-          type: 'string'
+            oneOf: [
+                { type: 'null' },
+                { type: 'string' },
+            ],
         },
 
         referenceCode: {

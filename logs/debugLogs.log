@@ -1,25 +1,1832 @@
-[09:13:51.571] INFO:  
+[10:17:57.802] INFO:  
 ╔════════════════════════════════════════════════════════════╗
 ║ API REQUEST                                                ║
 ╠════════════════════════════════════════════════════════════╣
-  URL:         (GET) http://localhost:8443/announcements/47/attachments/111111?EntityCode=784324630431
-  Status:      404 Not Found
+  URL:         (POST) http://localhost:8443/announcements?EntityCode=784324630431
+  Status:      400 Bad Request
   Headers:     {
-                 "date": "Thu, 17 Sep 2026 14:13:51 GMT",
+                 "date": "Thu, 17 Sep 2026 15:17:58 GMT",
                  "content-type": "application/json; charset=utf-8",
                  "transfer-encoding": "chunked",
                  "connection": "keep-alive",
                  "server": "Kestrel",
-                 "x-trace-id": "75c7901d9e7c8e6a7a9bef50aa8ee42a"
+                 "x-trace-id": "5ff94d95b1df7575d5b13e515fdb8951"
+               }
+  Body:        {
+                 "error": {
+                   "type": "DOMAIN_VALIDATION",
+                   "code": "HTTP.DOMAIN_VALIDATION",
+                   "message": "Domain validation failed.",
+                   "details": [
+                     {
+                       "property": "programs[0].Code",
+                       "errors": [
+                         "Program code is required."
+                       ]
+                     }
+                   ]
+                 },
+                 "statusCode": 400
+               }
+╚════════════════════════════════════════════════════�[10:17:57.[10:[10:17:57.945] INF[10:17:57.992] INFO:  
+╔════════════════════════════════════════════════════════════╗
+║ API REQUEST                                                ║
+╠════════════════════════════════════════════════════════════╣
+  URL:         (POST) http://localhost:8443/announcements/49/attachments/5583?EntityCode=784324630431
+  Status:      204 No Content
+  Headers:     {
+                 "date": "Thu, 17 Sep 2026 15:17:58 GMT",
+                 "connection": "keep-alive",
+                 "server": "Kestrel",
+                 "x-trace-id": "c204cb57c91bebc000f3d4e35dedeab6"
+               }
+  Body:        
+╚════════════════════════════════════════════════════════════╝
+    
+[10:17:58.137] INFO:  
+╔════════════════════════════════════════════════════════════╗
+║ API REQUEST                                                ║
+╠═════════════════════════════════�[10:17:58.206] INFO:  
+╔════════════════════════════════════════════════════════════╗
+║ API REQUEST                                                ║
+╠════════════════════════════════════════════════════════════╣
+  URL:         (GET) http://localhost:8443/announcements?EntityCode=784324630431
+  Status:      200 OK
+  Headers:     {
+                 "date": "Thu, 17 Sep 2026 15:17:58 GMT",
+                 "content[10:17:58.320] INFO:  
+╔════════════════════════════════════════════════════════════╗
+║ API REQUEST                                                ║
+╠════════════════════════════════════════════════════════════╣
+  URL:         (POST) http://localhost:8443/announcements?EntityCode=784324630431
+  Status:      201 Created
+  Headers:     {
+                 "date": "Thu, 17 Sep 2026 15:17:58 GMT",
+                 "content-type": "application/json; charset=utf-8",
+                 "transfer-encoding": "chunked",
+                 "connection": "keep-alive",
+                 "server": "Kestrel",
+                 "x-trace-id": "e21099980a2d2ad4b5df28afec6e15a9"
+               }
+  Body:        {
+                 "data": {
+                   "id": 210,
+                   "name": [10:17:58.321] INFO:  
+╔════════════════════════════════════════════════════════════╗
+║ API REQUEST                                                ║
+╠════════════════════════════════════════════════════════════╣
+  URL:         (GET) http://localhost:8443/announcements?EntityCode=784324630431&AppliesTo=2
+  Status:      200 OK
+  Headers:     {
+                 "date": "Thu, 17 Sep 2026[10:17:58.328] INFO:  
+╔════════════════════════════════════════════════════════════╗
+║ API REQUEST                                                ║
+╠════════════════════════════════════════════════════════════╣
+  URL:         (GET) http://localhost:8443/announcements/1111?EntityCode=784324630431
+  Status:      404 Not Found
+  Headers:     {
+                 "date": "Thu, 17 Sep 2026 15:17:5[10:17:58.511] INFO:  
+╔════════════════════════════════════════════════════════════╗
+║ API REQUEST                                                ║
+╠════════════════════════════════════════════════════════════╣
+  URL:         (GET) http://localhost:8443/announcements/210?EntityCode=784324630431
+  Status:      200 OK
+  Headers:     {
+                 "date": "Thu, 17 Sep 2026 15:17:58 GMT",
+                 "content-type": "application/json; charset=utf-8",
+                 "transfer-encoding": "chunked",
+                 "connection": [10:17:58.527] INFO:  
+╔════════════════════════════════════════════════════════════╗
+║ API REQUEST                                                ║
+╠════════════════════════════════════════════════════════════╣
+  URL:         (POST) http://localhost:8443/announcements/49/attachments/5592
+  Status:      409 Conflict
+  Headers:     {
+                 "date": "Thu, 17 Sep 2026 15:17:58 GMT",
+                 "content-type": "application/json; charset=utf-8",
+                 "transfer-encoding": "chunked",
+                 "connection": "keep-alive",
+                 "server": "Kestrel",
+                 "x-trace-id": "f8f9322813e09ee3fc72867c18e737ba"
+               }
+  Body:        {
+                 "error": {
+                   "type": "CONFLICT",
+                   "code": "HTTP.CONFLICT",
+                   "message": "Attachment '5592' is already attached to Announcement '49'.",
+                   "details": []
+                 },
+                 "statusCode": 409
+               }
+╚════════════════════════════════════════════════════════════╝
+    
+[10:17:58.809] INFO:  
+╔════════════════════════════════════════════════════════════╗
+║ API REQUEST                                                ║
+╠════════════════════════════════════════════════════════════╣
+  URL:         (POST) http://localhost:8443/announcements?EntityCode=784324630431
+  Status:      201 Created
+  Headers:     {
+                 "date": "Thu, 17 Sep 2026 15:17:59 GMT",
+                 "content-type": "application/json; charset=utf-8",
+                 "transfer-encoding": "chunked",
+                 "connection": "keep-alive",
+                 "server": "Kestrel",
+                 "x-trace-id": "dbf95ca9c256d14c191f60cd38939def"
+               }
+  Body:        {
+                 "data": {
+                   "id": 213,
+                   "name": "Comunicado desde API prueba nueva de comunicados desde codigo - 1789658278564",
+                   "description": "Esto es una prueba de creación para los comunicados desde código, para validar que la creación de comunicados funcione correctamente desde código y no solo desde postman",
+                   "appliesTo": [
+                     0,
+                     1,
+                     2,
+                     3
+                   ],
+                   "programs": [
+                     {
+                       "code": "1331",
+                       "name": ""
+                     }
+                   ],
+                   "grades": [],
+                   "startDate": null,
+                   "endDate": null,
+                   "campusSchedules": [],
+                   "isActive": true,
+                   "createdAt": "2026-09-17T15:17:59.1279238Z",
+                   "updatedAt": null,
+                   "period": {
+                     "id": 21,
+                     "name": ""
+                   }
+                 },
+                 "statusCode": 201
+               }
+╚════════════════════════════════════════════════════════════╝
+    
+[10:17:58.958] INFO:  
+╔════════════════════════════════════════════════════════════╗
+║ API REQUEST                                                ║
+╠════════════════════════════════════════════════════════════╣
+  URL:         (PUT) http://localhost:8443/announcements/213?EntityCode=784324630431
+  Status:      400 Bad Request
+  Headers:     {
+                 "date": "Thu, 17 Sep 2026 15:17:59 GMT",
+                 "content-type": "application/json; charset=utf-8",
+                 "transfer-encoding": "chunked",
+                 "connection": "keep-alive",
+                 "server": "Kestrel",
+                 "x-trace-id": "3e871d009a9650b521884cb93b501035"
+               }
+  Body:        {
+                 "error": {
+                   "type": "VALIDATION",
+                   "code": "HTTP.VALIDATION",
+                   "message": "Validation failed",
+                   "details": [
+                     {
+                       "property": "appliesTo",
+                       "errors": [
+                         "The AppliesTo field is required."
+                       ]
+                     }
+                   ]
+                 },
+                 "statusCode": 400
+               }
+╚════════════════════════════════════════════════════════════╝
+    
+[10:17:59.107] INFO:  
+╔════════════════════════════════════════════════════════════╗
+║ API REQUEST                                                ║
+╠════════════════════════════════════════════════════════════╣
+  URL:         (DELETE) http://localhost:8443/announcements/213?EntityCode=784324630431
+  Status:      204 No Content
+  Headers:     {
+                 "date": "Thu, 17 Sep 2026 15:17:59 GMT",
+                 "connection": "keep-alive",
+                 "server": "Kestrel",
+                 "x-trace-id": "ada07390b0bd81cefd75da10f00fce07"
+               }
+  Body:        
+╚════════════════════════════════════════════════════════════╝
+    
+",
+                           "name": "Capacitación interna"
+                         },
+                         {
+                           "code": "CB",
+                           "name": "COME BACK"
+                         },
+                         {
+                           "code": "CEL",
+                           "name": "CELOSA"
+                         },
+                         {
+                           "code": "CF",
+                           "name": "CAFE"
+                         },
+                         {
+                           "code": "CR",
+                           "name": "CORA"
+                         },
+                         {
+                           "code": "DBLT",
+                           "name": "Diablita"
+                         },
+                         {
+                           "code": "DOTH",
+                           "name": "DIE ON THIS HILL"
+                         },
+                         {
+                           "code": "DS",
+                           "name": "DE SASTRES"
+                         },
+                         {
+                           "code": "EP",
+                           "name": "El Patio"
+                         },
+                         {
+                           "code": "FR",
+                           "name": "FRIO"
+                         },
+                         {
+                           "code": "FT",
+                           "name": "FA-TAL"
+                         },
+                         {
+                           "code": "FT2",
+                           "name": "Quédate a dormir hasta que sea normal Quiero que te canses de mí, literal Te presto mis jeans y te--"
+                         },
+                         {
+                           "code": "GAOM",
+                           "name": "GO AWAY OF ME"
+                         },
+                         {
+                           "code": "GF",
+                           "name": "Golfista"
+                         },
+                         {
+                           "code": "GT",
+                           "name": "GANTEL"
+                         },
+                         {
+                           "code": "HN",
+                           "name": "Hana"
+                         },
+                         {
+                           "code": "HYM HN",
+                           "name": "Hayami Hana"
+                         },
+                         {
+                           "code": "IE003",
+                           "name": "Ingeniería Electrónica"
+                         },
+                         {
+                           "code": "IMY",
+                           "name": "DO I MISS YOU ??"
+                         },
+                         {
+                           "code": "INDI",
+                           "name": "INDI"
+                         },
+                         {
+                           "code": "INT",
+                           "name": "Interluv"
+                         },
+                         {
+                           "code": "JG",
+                           "name": "JUEGUITO"
+                         },
+                         {
+                           "code": "LID",
+                           "name": "LV IN THE DARK"
+                         },
+                         {
+                           "code": "LOY",
+                           "name": "Loyal"
+                         },
+                         {
+                           "code": "LVSNSS",
+                           "name": "LOVESICKNESS"
+                         },
+                         {
+                           "code": "ML",
+                           "name": "MILI"
+                         },
+                         {
+                           "code": "MS",
+                           "name": "SEÑORITA"
+                         },
+                         {
+                           "code": "NINI",
+                           "name": "NINGUNA"
+                         },
+                         {
+                           "code": "NM",
+                           "name": "Nadie Más"
+                         },
+                         {
+                           "code": "OMW",
+                           "name": "On My Way"
+                         },
+                         {
+                           "code": "P01JPM",
+                           "name": "Programa Pruebas de Software JCPM"
+                         },
+                         {
+                           "code": "PPR2",
+                           "name": "Millows"
+                         },
+                         {
+                           "code": "RD",
+                           "name": "Ruido"
+                         },
+                         {
+                           "code": "RLX",
+                           "name": "RELAXING"
+                         },
+                         {
+                           "code": "SEFH",
+                           "name": "Selfish"
+                         },
+                         {
+                           "code": "SH",
+                           "name": "SHÉ"
+                         },
+                         {
+                           "code": "SL",
+                           "name": "SOLA"
+                         },
+                         {
+                           "code": "STM",
+                           "name": "Sin tu amor"
+                         },
+                         {
+                           "code": "TTR",
+                           "name": "TTR"
+                         },
+                         {
+                           "code": "TU",
+                           "name": "Tuuu"
+                         },
+                         {
+                           "code": "UBGT",
+                           "name": "Ubaguata"
+                         },
+                         {
+                           "code": "UBGT DX",
+                           "name": "Ubaguata Deluxe"
+                         },
+                         {
+                           "code": "UNT",
+                           "name": "Unstable"
+                         },
+                         {
+                           "code": "WD",
+                           "name": "WINDOW"
+                         }
+                       ],
+                       "attachments": []
+                     },
+                     {
+                       "id": 47,
+                       "name": "5",
+                       "description": "<p>asdasdsad</p>\r\n",
+                       "appliesTo": [
+                         3,
+                         2
+                       ],
+                       "createdAt": "2026-09-02T01:56:00.21Z",
+                       "startDate": null,
+                       "endDate": null,
+                       "period": null,
+                       "campusSchedules": [
+                         {
+                           "id": 4,
+                           "name": "Principal - Diurna"
+                         },
+                         {
+                           "id": 1,
+                           "name": "Principal - Mañana"
+                         },
+                         {
+                           "id": 3,
+                           "name": "Principal - Tarde"
+                         }
+                       ],
+                       "grades": [],
+                       "programs": [
+                         {
+                           "code": "002",
+                           "name": "PROGRAMA MAVP"
+                         },
+                         {
+                           "code": "124867",
+                           "name": "Ingeniería Ambiental"
+                         },
+                         {
+                           "code": "257111",
+                           "name": "GASTRONOMÍA"
+                         },
+                         {
+                           "code": "3242",
+                           "name": "Redragon"
+                         },
+                         {
+                           "code": "32yut",
+                           "name": "Programa Equivalente"
+                         },
+                         {
+                           "code": "6954",
+                           "name": "Ciencias Políticas"
+                         },
+                         {
+                           "code": "AGG",
+                           "name": "AGOGO"
+                         },
+                         {
+                           "code": "AR",
+                           "name": "Aura"
+                         },
+                         {
+                           "code": "BBT",
+                           "name": "Burbujita"
+                         },
+                         {
+                           "code": "BBTF",
+                           "name": "Burbujita - flash"
+                         },
+                         {
+                           "code": "BL",
+                           "name": "BELLKz"
+                         },
+                         {
+                           "code": "BM",
+                           "name": "BE ME"
+                         },
+                         {
+                           "code": "Capa",
+                           "name": "Capacitación interna"
+                         },
+                         {
+                           "code": "CB",
+                           "name": "COME BACK"
+                         },
+                         {
+                           "code": "CEL",
+                           "name": "CELOSA"
+                         },
+                         {
+                           "code": "CF",
+                           "name": "CAFE"
+                         },
+                         {
+                           "code": "CR",
+                           "name": "CORA"
+                         },
+                         {
+                           "code": "DBLT",
+                           "name": "Diablita"
+                         },
+                         {
+                           "code": "DOTH",
+                           "name": "DIE ON THIS HILL"
+                         },
+                         {
+                           "code": "DS",
+                           "name": "DE SASTRES"
+                         },
+                         {
+                           "code": "EP",
+                           "name": "El Patio"
+                         },
+                         {
+                           "code": "FR",
+                           "name": "FRIO"
+                         },
+                         {
+                           "code": "FT",
+                           "name": "FA-TAL"
+                         },
+                         {
+                           "code": "FT2",
+                           "name": "Quédate a dormir hasta que sea normal Quiero que te canses de mí, literal Te presto mis jeans y te--"
+                         },
+                         {
+                           "code": "GAOM",
+                           "name": "GO AWAY OF ME"
+                         },
+                         {
+                           "code": "GF",
+                           "name": "Golfista"
+                         },
+                         {
+                           "code": "GT",
+                           "name": "GANTEL"
+                         },
+                         {
+                           "code": "HN",
+                           "name": "Hana"
+                         },
+                         {
+                           "code": "HYM HN",
+                           "name": "Hayami Hana"
+                         },
+                         {
+                           "code": "IE003",
+                           "name": "Ingeniería Electrónica"
+                         },
+                         {
+                           "code": "IMY",
+                           "name": "DO I MISS YOU ??"
+                         },
+                         {
+                           "code": "INDI",
+                           "name": "INDI"
+                         },
+                         {
+                           "code": "INT",
+                           "name": "Interluv"
+                         },
+                         {
+                           "code": "JG",
+                           "name": "JUEGUITO"
+                         },
+                         {
+                           "code": "LID",
+                           "name": "LV IN THE DARK"
+                         },
+                         {
+                           "code": "LOY",
+                           "name": "Loyal"
+                         },
+                         {
+                           "code": "LVSNSS",
+                           "name": "LOVESICKNESS"
+                         },
+                         {
+                           "code": "ML",
+                           "name": "MILI"
+                         },
+                         {
+                           "code": "MS",
+                           "name": "SEÑORITA"
+                         },
+                         {
+                           "code": "NINI",
+                           "name": "NINGUNA"
+                         },
+                         {
+                           "code": "NM",
+                           "name": "Nadie Más"
+                         },
+                         {
+                           "code": "OMW",
+                           "name": "On My Way"
+                         },
+                         {
+                           "code": "P01JPM",
+                           "name": "Programa Pruebas de Software JCPM"
+                         },
+                         {
+                           "code": "PPR2",
+                           "name": "Millows"
+                         },
+                         {
+                           "code": "RD",
+                           "name": "Ruido"
+                         },
+                         {
+                           "code": "RLX",
+                           "name": "RELAXING"
+                         },
+                         {
+                           "code": "SEFH",
+                           "name": "Selfish"
+                         },
+                         {
+                           "code": "SH",
+                           "name": "SHÉ"
+                         },
+                         {
+                           "code": "SL",
+                           "name": "SOLA"
+                         },
+                         {
+                           "code": "STM",
+                           "name": "Sin tu amor"
+                         },
+                         {
+                           "code": "TTR",
+                           "name": "TTR"
+                         },
+                         {
+                           "code": "TU",
+                           "name": "Tuuu"
+                         },
+                         {
+                           "code": "UBGT",
+                           "name": "Ubaguata"
+                         },
+                         {
+                           "code": "UBGT DX",
+                           "name": "Ubaguata Deluxe"
+                         },
+                         {
+                           "code": "UNT",
+                           "name": "Unstable"
+                         },
+                         {
+                           "code": "WD",
+                           "name": "WINDOW"
+                         }
+                       ],
+                       "attachments": [
+                         {
+                           "id": 5588,
+                           "fileName": "INFORME - ESTUDIANTE (PRODUCCIÓN).xlsx",
+                           "filePath": "784324630431/comunicados/47/INFORME__ESTUDIANTE_PRODUCCION.xlsx#_public",
+                           "extension": "xlsx",
+                           "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                         },
+                         {
+                           "id": 5589,
+                           "fileName": "13_CLASE_FDM_2026_I.pdf",
+                           "filePath": "784324630431/comunicados/47/13_CLASE_FDM_2026_I.pdf#_public",
+                           "extension": "pdf",
+                           "contentType": "application/pdf"
+                         },
+                         {
+                           "id": 5590,
+                           "fileName": "9_CLASE_FDM_2026_I.pdf",
+                           "filePath": "784324630431/comunicados/47/9_CLASE_FDM_2026_I.pdf#_public",
+                           "extension": "pdf",
+                           "contentType": "application/pdf"
+                         },
+                         {
+                           "id": 5591,
+                           "fileName": "Certificado.pdf",
+                           "filePath": "784324630431/comunicados/47/Certificado.pdf#_public",
+                           "extension": "pdf",
+                           "contentType": "application/pdf"
+                         },
+                         {
+                           "id": 5592,
+                           "fileName": "ConsolidadoNotasCuantitativo (4).pdf",
+                           "filePath": "784324630431/comunicados/47/ConsolidadoNotasCuantitativo_4.pdf#_public",
+                           "extension": "pdf",
+                           "contentType": "application/pdf"
+                         },
+                         {
+                           "id": 5593,
+                           "fileName": "ReporteNotasCreditoMediaCarta.docx",
+                           "filePath": "784324630431/comunicados/47/ReporteNotasCreditoMediaCarta.docx#_public",
+                           "extension": "docx",
+                           "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                         }
+                       ]
+                     },
+                     {
+                       "id": 43,
+                       "name": "1",
+                       "description": "<p>sdadadda</p>\r\n",
+                       "appliesTo": [
+                         3
+                       ],
+                       "createdAt": "2026-09-02T01:55:18.527Z",
+                       "startDate": null,
+                       "endDate": null,
+                       "period": null,
+                       "campusSchedules": [
+                         {
+                           "id": 4,
+                           "name": "Principal - Diurna"
+                         },
+                         {
+                           "id": 1,
+                           "name": "Principal - Mañana"
+                         },
+                         {
+                           "id": 3,
+                           "name": "Principal - Tarde"
+                         }
+                       ],
+                       "grades": [],
+                       "programs": [
+                         {
+                           "code": "002",
+                           "name": "PROGRAMA MAVP"
+                         },
+                         {
+                           "code": "124867",
+                           "name": "Ingeniería Ambiental"
+                         },
+                         {
+                           "code": "257111",
+                           "name": "GASTRONOMÍA"
+                         },
+                         {
+                           "code": "3242",
+                           "name": "Redragon"
+                         },
+                         {
+                           "code": "32yut",
+                           "name": "Programa Equivalente"
+                         },
+                         {
+                           "code": "6954",
+                           "name": "Ciencias Políticas"
+                         },
+                         {
+                           "code": "AGG",
+                           "name": "AGOGO"
+                         },
+                         {
+                           "code": "AR",
+                           "name": "Aura"
+                         },
+                         {
+                           "code": "BBT",
+                           "name": "Burbujita"
+                         },
+                         {
+                           "code": "BBTF",
+                           "name": "Burbujita - flash"
+                         },
+                         {
+                           "code": "BL",
+                           "name": "BELLKz"
+                         },
+                         {
+                           "code": "BM",
+                           "name": "BE ME"
+                         },
+                         {
+                           "code": "Capa",
+                           "name": "Capacitación interna"
+                         },
+                         {
+                           "code": "CB",
+                           "name": "COME BACK"
+                         },
+                         {
+                           "code": "CEL",
+                           "name": "CELOSA"
+                         },
+                         {
+                           "code": "CF",
+                           "name": "CAFE"
+                         },
+                         {
+                           "code": "CR",
+                           "name": "CORA"
+                         },
+                         {
+                           "code": "DBLT",
+                           "name": "Diablita"
+                         },
+                         {
+                           "code": "DOTH",
+                           "name": "DIE ON THIS HILL"
+                         },
+                         {
+                           "code": "DS",
+                           "name": "DE SASTRES"
+                         },
+                         {
+                           "code": "EP",
+                           "name": "El Patio"
+                         },
+                         {
+                           "code": "FR",
+                           "name": "FRIO"
+                         },
+                         {
+                           "code": "FT",
+                           "name": "FA-TAL"
+                         },
+                         {
+                           "code": "FT2",
+                           "name": "Quédate a dormir hasta que sea normal Quiero que te canses de mí, literal Te presto mis jeans y te--"
+                         },
+                         {
+                           "code": "GAOM",
+                           "name": "GO AWAY OF ME"
+                         },
+                         {
+                           "code": "GF",
+                           "name": "Golfista"
+                         },
+                         {
+                           "code": "GT",
+                           "name": "GANTEL"
+                         },
+                         {
+                           "code": "HN",
+                           "name": "Hana"
+                         },
+                         {
+                           "code": "HYM HN",
+                           "name": "Hayami Hana"
+                         },
+                         {
+                           "code": "IE003",
+                           "name": "Ingeniería Electrónica"
+                         },
+                         {
+                           "code": "IMY",
+                           "name": "DO I MISS YOU ??"
+                         },
+                         {
+                           "code": "INDI",
+                           "name": "INDI"
+                         },
+                         {
+                           "code": "INT",
+                           "name": "Interluv"
+                         },
+                         {
+                           "code": "JG",
+                           "name": "JUEGUITO"
+                         },
+                         {
+                           "code": "LID",
+                           "name": "LV IN THE DARK"
+                         },
+                         {
+                           "code": "LOY",
+                           "name": "Loyal"
+                         },
+                         {
+                           "code": "LVSNSS",
+                           "name": "LOVESICKNESS"
+                         },
+                         {
+                           "code": "ML",
+                           "name": "MILI"
+                         },
+                         {
+                           "code": "MS",
+                           "name": "SEÑORITA"
+                         },
+                         {
+                           "code": "NINI",
+                           "name": "NINGUNA"
+                         },
+                         {
+                           "code": "NM",
+                           "name": "Nadie Más"
+                         },
+                         {
+                           "code": "OMW",
+                           "name": "On My Way"
+                         },
+                         {
+                           "code": "P01JPM",
+                           "name": "Programa Pruebas de Software JCPM"
+                         },
+                         {
+                           "code": "PPR2",
+                           "name": "Millows"
+                         },
+                         {
+                           "code": "RD",
+                           "name": "Ruido"
+                         },
+                         {
+                           "code": "RLX",
+                           "name": "RELAXING"
+                         },
+                         {
+                           "code": "SEFH",
+                           "name": "Selfish"
+                         },
+                         {
+                           "code": "SH",
+                           "name": "SHÉ"
+                         },
+                         {
+                           "code": "SL",
+                           "name": "SOLA"
+                         },
+                         {
+                           "code": "STM",
+                           "name": "Sin tu amor"
+                         },
+                         {
+                           "code": "TTR",
+                           "name": "TTR"
+                         },
+                         {
+                           "code": "TU",
+                           "name": "Tuuu"
+                         },
+                         {
+                           "code": "UBGT",
+                           "name": "Ubaguata"
+                         },
+                         {
+                           "code": "UBGT DX",
+                           "name": "Ubaguata Deluxe"
+                         },
+                         {
+                           "code": "UNT",
+                           "name": "Unstable"
+                         },
+                         {
+                           "code": "WD",
+                           "name": "WINDOW"
+                         }
+                       ],
+                       "attachments": []
+                     },
+                     {
+                       "id": 36,
+                       "name": "\"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas ass",
+                       "description": "<p>&quot;At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.&quot;</p>\r\n",
+                       "appliesTo": [
+                         3,
+                         1
+                       ],
+                       "createdAt": "2026-07-18T02:09:28.727Z",
+                       "startDate": null,
+                       "endDate": null,
+                       "period": null,
+                       "campusSchedules": [
+                         {
+                           "id": 4,
+                           "name": "Principal - Diurna"
+                         },
+                         {
+                           "id": 1,
+                           "name": "Principal - Mañana"
+                         },
+                         {
+                           "id": 3,
+                           "name": "Principal - Tarde"
+                         }
+                       ],
+                       "grades": [],
+                       "programs": [
+                         {
+                           "code": "002",
+                           "name": "PROGRAMA MAVP"
+                         },
+                         {
+                           "code": "124867",
+                           "name": "Ingeniería Ambiental"
+                         },
+                         {
+                           "code": "257111",
+                           "name": "GASTRONOMÍA"
+                         },
+                         {
+                           "code": "32yut",
+                           "name": "Programa Equivalente"
+                         },
+                         {
+                           "code": "6954",
+                           "name": "Ciencias Políticas"
+                         },
+                         {
+                           "code": "AGG",
+                           "name": "AGOGO"
+                         },
+                         {
+                           "code": "AR",
+                           "name": "Aura"
+                         },
+                         {
+                           "code": "BBT",
+                           "name": "Burbujita"
+                         },
+                         {
+                           "code": "BBTF",
+                           "name": "Burbujita - flash"
+                         },
+                         {
+                           "code": "Capa",
+                           "name": "Capacitación interna"
+                         },
+                         {
+                           "code": "CB",
+                           "name": "COME BACK"
+                         },
+                         {
+                           "code": "CF",
+                           "name": "CAFE"
+                         },
+                         {
+                           "code": "CR",
+                           "name": "CORA"
+                         },
+                         {
+                           "code": "DBLT",
+                           "name": "Diablita"
+                         },
+                         {
+                           "code": "DOTH",
+                           "name": "DIE ON THIS HILL"
+                         },
+                         {
+                           "code": "DS",
+                           "name": "DE SASTRES"
+                         },
+                         {
+                           "code": "EP",
+                           "name": "El Patio"
+                         },
+                         {
+                           "code": "FR",
+                           "name": "FRIO"
+                         },
+                         {
+                           "code": "FT",
+                           "name": "FA-TAL"
+                         },
+                         {
+                           "code": "FT2",
+                           "name": "Quédate a dormir hasta que sea normal Quiero que te canses de mí, literal Te presto mis jeans y te--"
+                         },
+                         {
+                           "code": "GAOM",
+                           "name": "GO AWAY OF ME"
+                         },
+                         {
+                           "code": "GF",
+                           "name": "Golfista"
+                         },
+                         {
+                           "code": "HYM HN",
+                           "name": "Hayami Hana"
+                         },
+                         {
+                           "code": "IE003",
+                           "name": "Ingeniería Electrónica"
+                         },
+                         {
+                           "code": "IMY",
+                           "name": "DO I MISS YOU ??"
+                         },
+                         {
+                           "code": "INDI",
+                           "name": "INDI"
+                         },
+                         {
+                           "code": "INT",
+                           "name": "Interluv"
+                         },
+                         {
+                           "code": "JG",
+                           "name": "JUEGUITO"
+                         },
+                         {
+                           "code": "LID",
+                           "name": "LV IN THE DARK"
+                         },
+                         {
+                           "code": "LOY",
+                           "name": "Loyal"
+                         },
+                         {
+                           "code": "LVSNSS",
+                           "name": "LOVESICKNESS"
+                         },
+                         {
+                           "code": "ML",
+                           "name": "MILI"
+                         },
+                         {
+                           "code": "NINI",
+                           "name": "NINGUNA"
+                         },
+                         {
+                           "code": "NM",
+                           "name": "Nadie Más"
+                         },
+                         {
+                           "code": "OMW",
+                           "name": "On My Way"
+                         },
+                         {
+                           "code": "P01JPM",
+                           "name": "Programa Pruebas de Software JCPM"
+                         },
+                         {
+                           "code": "PPR2",
+                           "name": "Millows"
+                         },
+                         {
+                           "code": "RD",
+                           "name": "Ruido"
+                         },
+                         {
+                           "code": "RLX",
+                           "name": "RELAXING"
+                         },
+                         {
+                           "code": "SEFH",
+                           "name": "Selfish"
+                         },
+                         {
+                           "code": "SH",
+                           "name": "SHÉ"
+                         },
+                         {
+                           "code": "SL",
+                           "name": "SOLA"
+                         },
+                         {
+                           "code": "STM",
+                           "name": "Sin tu amor"
+                         },
+                         {
+                           "code": "TTR",
+                           "name": "TTR"
+                         },
+                         {
+                           "code": "TU",
+                           "name": "Tuuu"
+                         },
+                         {
+                           "code": "UBGT",
+                           "name": "Ubaguata"
+                         },
+                         {
+                           "code": "UBGT DX",
+                           "name": "Ubaguata Deluxe"
+                         },
+                         {
+                           "code": "UNT",
+                           "name": "Unstable"
+                         },
+                         {
+                           "code": "WD",
+                           "name": "WINDOW"
+                         }
+                       ],
+                       "attachments": []
+                     },
+                     {
+                       "id": 30,
+                       "name": "Comunicado prueba Jhennifer (Editado)",
+                       "description": "<p style=\"text-align:center\">Prueba de Comunicado</p>\r\n\r\n<p style=\"text-align:center\">Fecha de publicidad.</p>\r\n\r\n<p style=\"text-align:center\">Se agrega nuevo contenido en la descripci&oacute;n&nbsp;</p>\r\n\r\n<p style=\"text-align:center\"><strong>Secci&oacute;n 1.10.33 de &quot;de Finibus Bonorum et Malorum&quot;, escrito por Cicero en el 45 antes de Cristo</strong></p>\r\n\r\n<p style=\"text-align:center\">&quot;At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.&quot;</p>\r\n\r\n<p style=\"text-align:center\"><img src=\"https://q10storage.blob.core.windows.net/q10academico-public/784324630431/virtualeducation/archivos/others/471774afe4194fd4976cacf657560704.png\" /></p>\r\n",
+                       "appliesTo": [
+                         3,
+                         2
+                       ],
+                       "createdAt": "2026-07-17T20:46:56.773Z",
+                       "startDate": "2026-07-21T10:00:00Z",
+                       "endDate": "2026-07-24T10:00:00Z",
+                       "period": null,
+                       "campusSchedules": [
+                         {
+                           "id": 4,
+                           "name": "Principal - Diurna"
+                         },
+                         {
+                           "id": 1,
+                           "name": "Principal - Mañana"
+                         },
+                         {
+                           "id": 3,
+                           "name": "Principal - Tarde"
+                         }
+                       ],
+                       "grades": [],
+                       "programs": [
+                         {
+                           "code": "002",
+                           "name": "PROGRAMA MAVP"
+                         },
+                         {
+                           "code": "124867",
+                           "name": "Ingeniería Ambiental"
+                         },
+                         {
+                           "code": "257111",
+                           "name": "GASTRONOMÍA"
+                         },
+                         {
+                           "code": "32yut",
+                           "name": "Programa Equivalente"
+                         },
+                         {
+                           "code": "6954",
+                           "name": "Ciencias Políticas"
+                         },
+                         {
+                           "code": "AGG",
+                           "name": "AGOGO"
+                         },
+                         {
+                           "code": "AR",
+                           "name": "Aura"
+                         },
+                         {
+                           "code": "BBT",
+                           "name": "Burbujita"
+                         },
+                         {
+                           "code": "BBTF",
+                           "name": "Burbujita - flash"
+                         },
+                         {
+                           "code": "Capa",
+                           "name": "Capacitación interna"
+                         },
+                         {
+                           "code": "CB",
+                           "name": "COME BACK"
+                         },
+                         {
+                           "code": "CF",
+                           "name": "CAFE"
+                         },
+                         {
+                           "code": "CR",
+                           "name": "CORA"
+                         },
+                         {
+                           "code": "DBLT",
+                           "name": "Diablita"
+                         },
+                         {
+                           "code": "DOTH",
+                           "name": "DIE ON THIS HILL"
+                         },
+                         {
+                           "code": "DS",
+                           "name": "DE SASTRES"
+                         },
+                         {
+                           "code": "EP",
+                           "name": "El Patio"
+                         },
+                         {
+                           "code": "FR",
+                           "name": "FRIO"
+                         },
+                         {
+                           "code": "FT",
+                           "name": "FA-TAL"
+                         },
+                         {
+                           "code": "FT2",
+                           "name": "Quédate a dormir hasta que sea normal Quiero que te canses de mí, literal Te presto mis jeans y te--"
+                         },
+                         {
+                           "code": "GAOM",
+                           "name": "GO AWAY OF ME"
+                         },
+                         {
+                           "code": "GF",
+                           "name": "Golfista"
+                         },
+                         {
+                           "code": "HYM HN",
+                           "name": "Hayami Hana"
+                         },
+                         {
+                           "code": "IE003",
+                           "name": "Ingeniería Electrónica"
+                         },
+                         {
+                           "code": "IMY",
+                           "name": "DO I MISS YOU ??"
+                         },
+                         {
+                           "code": "INDI",
+                           "name": "INDI"
+                         },
+                         {
+                           "code": "INT",
+                           "name": "Interluv"
+                         },
+                         {
+                           "code": "JG",
+                           "name": "JUEGUITO"
+                         },
+                         {
+                           "code": "LID",
+                           "name": "LV IN THE DARK"
+                         },
+                         {
+                           "code": "LOY",
+                           "name": "Loyal"
+                         },
+                         {
+                           "code": "LVSNSS",
+                           "name": "LOVESICKNESS"
+                         },
+                         {
+                           "code": "ML",
+                           "name": "MILI"
+                         },
+                         {
+                           "code": "NINI",
+                           "name": "NINGUNA"
+                         },
+                         {
+                           "code": "NM",
+                           "name": "Nadie Más"
+                         },
+                         {
+                           "code": "OMW",
+                           "name": "On My Way"
+                         },
+                         {
+                           "code": "P01JPM",
+                           "name": "Programa Pruebas de Software JCPM"
+                         },
+                         {
+                           "code": "PPR2",
+                           "name": "Millows"
+                         },
+                         {
+                           "code": "RD",
+                           "name": "Ruido"
+                         },
+                         {
+                           "code": "RLX",
+                           "name": "RELAXING"
+                         },
+                         {
+                           "code": "SEFH",
+                           "name": "Selfish"
+                         },
+                         {
+                           "code": "SH",
+                           "name": "SHÉ"
+                         },
+                         {
+                           "code": "SL",
+                           "name": "SOLA"
+                         },
+                         {
+                           "code": "STM",
+                           "name": "Sin tu amor"
+                         },
+                         {
+                           "code": "TTR",
+                           "name": "TTR"
+                         },
+                         {
+                           "code": "TU",
+                           "name": "Tuuu"
+                         },
+                         {
+                           "code": "UBGT",
+                           "name": "Ubaguata"
+                         },
+                         {
+                           "code": "UBGT DX",
+                           "name": "Ubaguata Deluxe"
+                         },
+                         {
+                           "code": "UNT",
+                           "name": "Unstable"
+                         },
+                         {
+                           "code": "WD",
+                           "name": "WINDOW"
+                         }
+                       ],
+                       "attachments": [
+                         {
+                           "id": 5521,
+                           "fileName": "Visualización de comunicados.docx",
+                           "filePath": "784324630431/comunicados/30/Visualizacion_de_comunicados.docx#_public",
+                           "extension": "docx",
+                           "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                         }
+                       ]
+                     },
+                     {
+                       "id": 26,
+                       "name": "Prueba Dev 2",
+                       "description": "<p>Prueba Dev 2</p>\r\n",
+                       "appliesTo": [
+                         3
+                       ],
+                       "createdAt": "2026-07-15T15:42:57.08Z",
+                       "startDate": "2026-07-15T05:00:00Z",
+                       "endDate": "2026-07-16T05:00:00Z",
+                       "period": null,
+                       "campusSchedules": [
+                         {
+                           "id": 4,
+                           "name": "Principal - Diurna"
+                         },
+                         {
+                           "id": 1,
+                           "name": "Principal - Mañana"
+                         },
+                         {
+                           "id": 3,
+                           "name": "Principal - Tarde"
+                         }
+                       ],
+                       "grades": [],
+                       "programs": [
+                         {
+                           "code": "0001",
+                        [10:17:58.549] INFO:  
+╔════════════════════════════════════════════════════════════╗
+║ API REQUEST                                                ║
+╠════════════════════════════════════════════════════════════╣
+  URL:         (POST) http://localhost:8443/announcements/111111/attachments/5583?EntityCode=784324630431
+  Status:      404 Not Found
+  Headers:     {
+                 "date": "Thu, 17 Sep 2026 15:17:58 GMT",
+                 "content-type": "application/json; charset=utf-8",
+                 "transfer-encoding": "chunked",
+                 "connection": "keep-alive",
+                 "server": "Kestrel",
+                 "x-trace-id": "8fa5aca8a4321faed45f01f5f98f1f9e"
                }
   Body:        {
                  "error": {
                    "type": "NOT_FOUND",
                    "code": "HTTP.NOT_FOUND",
-                   "message": "Attachment with id '111111' was not found.",
+                   "message": "Announcement with id '111111' was not found.",
                    "details": []
                  },
                  "statusCode": 404
                }
+╚════════════════════════════════════════════════════════════╝
+    
+[10:17:58.809] INFO:  
+╔════════════════════════════════════════════════════════════╗
+║ API REQUEST                                                ║
+╠════════════════════════════════════════════════════════════╣
+  URL:         (POST) http://localhost:8443/announcements?EntityCode=784324630431
+  Status:      201 Created
+  Headers:     {
+                 "date": "Thu, 17 Sep 2026 15:17:59 GMT",
+                 "content-type": "application/json; charset=utf-8",
+                 "transfer-encoding": "chunked",
+                 "connection": "keep-alive",
+                 "server": "Kestrel",
+                 "x-trace-id": "85b042a80c6a5dcd522ef091b8c1da63"
+               }
+  Body:        {
+                 "data": {
+                   "id": 212,
+                   "name": "Comunicado desde API prueba nueva de comunicados desde codigo - 1789658278600",
+                   "description": "Esto es una prueba de creación para los comunicados desde código, para validar que la creación de comunicados funcione correctamente desde código y no solo desde postman",
+                   "appliesTo": [
+                     0,
+                     1,
+                     2,
+                     3
+                   ],
+                   "programs": [
+                     {
+                       "code": "1331",
+                       "name": ""
+                     }
+                   ],
+                   "grades": [],
+                   "startDate": null,
+                   "endDate": null,
+                   "campusSchedules": [],
+                   "isActive": true,
+                   "createdAt": "2026-09-17T15:17:59.1304375Z",
+                   "updatedAt": null,
+                   "period": {
+                     "id": 21,
+                     "name": ""
+                   }
+                 },
+                 "statusCode": 201
+               }
+╚════════════════════════════════════════════════════════════╝
+    
+[10:17:58.950] INFO:  
+╔════════════════════════════════════════════════════════════╗
+║ API REQUEST                                                ║
+╠════════════════════════════════════════════════════════════╣
+  URL:         (PUT) http://localhost:8443/announcements/212?EntityCode=784324630431
+  Status:      400 Bad Request
+  Headers:     {
+                 "date": "Thu, 17 Sep 2026 15:17:59 GMT",
+                 "content-type": "application/json; charset=utf-8",
+                 "transfer-encoding": "chunked",
+                 "connection": "keep-alive",
+                 "server": "Kestrel",
+                 "x-trace-id": "b589dfd1446f7a134f84f6a874337393"
+               }
+  Body:        {
+                 "error": {
+                   "type": "VALIDATION",
+                   "code": "HTTP.VALIDATION",
+                   "message": "Validation failed",
+                   "details": [
+                     {
+                       "property": "appliesTo",
+                       "value": [],
+                       "errors": [
+                         "AppliesTo must contain at least one value."
+                       ]
+                     }
+                   ]
+                 },
+                 "statusCode": 400
+               }
+╚════════════════════════════════════════════════════════════╝
+    
+[10:17:59.058] INFO:  
+╔════════════════════════════════════════════════════════════╗
+║ API REQUEST                                                ║
+╠════════════════════════════════════════════════════════════╣
+  URL:         (DELETE) http://localhost:8443/announcements/212?EntityCode=784324630431
+  Status:      204 No Content
+  Headers:     {
+                 "date": "Thu, 17 Sep 2026 15:17:59 GMT",
+                 "connection": "keep-alive",
+                 "server": "Kestrel",
+                 "x-trace-id": "c7b86263bcf892418c5c94aaf270b984"
+               }
+  Body:        
+╚════════════════════════════════════════════════════════════╝
+    
+   "name": "Ingeniería Mecatrónica"
+                         },
+                         {
+                           "code": "IM002",
+                           "name": "Ingeniería Mecánica"
+                         },
+                         {
+                           "code": "IMY",
+                           "name": "DO I MISS YOU ??"
+                         },
+                         {
+                           "code": "INDI",
+                           "name": "INDI"
+                         },
+                         {
+                           "code": "INT",
+                           "name": "Interluv"
+                         },
+                         {
+                           "code": "INT 2",
+                           "name": "Interluv (2)"
+                         },
+                         {
+                           "code": "JG",
+                           "name": "JUEGUITO"
+                         },
+                         {
+                           "code": "LID",
+                           "name": "LV IN THE DARK"
+                         },
+                         {
+                           "code": "LOY",
+                           "name": "Loyal"
+                         },
+                         {
+                           "code": "LVSNSS",
+                           "name": "LOVESICKNESS"
+                         },
+                         {
+                           "code": "MFM",
+                           "name": "Make for me"
+                         },
+                         {
+                           "code": "ML",
+                           "name": "MILI"
+                         },
+                         {
+                           "code": "NAT",
+                           "name": "Natación"
+                         },
+                         {
+                           "code": "NEG",
+                           "name": "Negocios Internaciones"
+                         },
+                         {
+                           "code": "NINI",
+                           "name": "NINGUNA"
+                         },
+                         {
+                           "code": "NM",
+                           "name": "Nadie Más"
+                         },
+                         {
+                           "code": "OMW",
+                           "name": "On My Way"
+                         },
+                         {
+                           "code": "P01JPM",
+                           "name": "Programa Pruebas de Software JCPM"
+                         },
+                         {
+                           "code": "PioPioPio",
+                           "name": "Piograma"
+                         },
+                         {
+                           "code": "PPCR",
+                           "name": "Prueba programa CR"
+                         },
+                         {
+                           "code": "PPR2",
+                           "name": "Millows"
+                         },
+                         {
+                           "code": "PRO_5478",
+                           "name": "Programa Medios Visuales"
+                         },
+                         {
+                           "code": "PRUE2",
+                           "name": "Técnica Pruebas de Software MAGA"
+                         },
+                         {
+                           "code": "RD",
+                           "name": "Ruido"
+                         },
+                         {
+                           "code": "RLX",
+                           "name": "RELAXING"
+                         },
+                         {
+                           "code": "SEFH",
+                           "name": "Selfish"
+                         },
+                         {
+                           "code": "SH",
+                           "name": "SHÉ"
+                         },
+                         {
+                           "code": "SL",
+                           "name": "SOLA"
+                         },
+                         {
+                           "code": "SLL",
+                           "name": "Spell"
+                         },
+                         {
+                           "code": "SOL",
+                           "name": "Soledad"
+                         },
+                         {
+                           "code": "STM",
+                           "name": "Sin tu amor"
+                         },
+                         {
+                           "code": "TB",
+                           "name": "Type beat"
+                         },
+                         {
+                           "code": "TTR",
+                           "name": "TTR"
+                         },
+                         {
+                           "code": "TU",
+                           "name": "Tuuu"
+                         },
+                         {
+                           "code": "UBGT",
+                           "name": "Ubaguata"
+                         },
+                         {
+                           "code": "UBGT DX",
+                           "name": "Ubaguata Deluxe"
+                         },
+                         {
+                           "code": "UNT",
+                           "name": "Unstable"
+                         },
+                         {
+                           "code": "UW",
+                           "name": "Under water"
+                         },
+                         {
+                           "code": "WD",
+                           "name": "WINDOW"
+                         },
+                         {
+                           "code": "Zimmerman",
+                           "name": "Zimmerman"
+                         }
+                       ],
+                       "attachments": []
+                     }
+                   ],
+                   "totalCount": 6
+                 },
+                 "statusCode": 200
+               }
+╚════════════════════════════════════════════════════════════╝
+    
+[10:17:58.566] INFO:  
+╔════════════════════════════════════════════════════════════╗
+║ API REQUEST                                                ║
+╠════════════════════════════════════════════════════════════╣
+  URL:         (POST) http://localhost:8443/announcements?EntityCode=784324630431
+  Status:      201 Created
+  Headers:     {
+                 "date": "Thu, 17 Sep 2026 15:17:58 GMT",
+                 "content-type": "application/json; charset=utf-8",
+                 "transfer-encoding": "chunked",
+                 "connection": "keep-alive",
+                 "server": "Kestrel",
+                 "x-trace-id": "7f29f0dd52f38db826c4cb1554d42c1b"
+               }
+  Body:        {
+                 "data": {
+                   "id": 211,
+                   "name": "Comunicado desde API prueba nueva de comunicados desde codigo - 1789658278429",
+                   "description": "Esto es una prueba de creación para los comunicados desde código, para validar que la creación de comunicados funcione correctamente desde código y no solo desde postman",
+                   "appliesTo": [
+                     0,
+                     1,
+                     2,
+                     3
+                   ],
+                   "programs": [
+                     {
+                       "code": "1331",
+                       "name": ""
+                     }
+                   ],
+                   "grades": [],
+                   "startDate": null,
+                   "endDate": null,
+                   "campusSchedules": [],
+                   "isActive": true,
+                   "createdAt": "2026-09-17T15:17:58.906266Z",
+                   "updatedAt": null,
+                   "period": {
+                     "id": 21,
+                     "name": ""
+                   }
+                 },
+                 "statusCode": 201
+               }
+╚════════════════════════════════════════════════════════════╝
+    
+[10:17:58.809] INFO:  
+╔════════════════════════════════════════════════════════════╗
+║ API REQUEST                                                ║
+╠════════════════════════════════════════════════════════════╣
+  URL:         (PUT) http://localhost:8443/announcements/211?EntityCode=784324630431
+  Status:      200 OK
+  Headers:     {
+                 "date": "Thu, 17 Sep 2026 15:17:59 GMT",
+                 "content-type": "application/json; charset=utf-8",
+                 "transfer-encoding": "chunked",
+                 "connection": "keep-alive",
+                 "server": "Kestrel",
+                 "x-trace-id": "808ec2c3fec451121c9d7f320bc9bd65"
+               }
+  Body:        {
+                 "data": {
+                   "id": 211
+                 },
+                 "statusCode": 200
+               }
+╚════════════════════════════════════════════════════════════╝
+    
+[10:17:58.951] INFO:  
+╔════════════════════════════════════════════════════════════╗
+║ API REQUEST                                                ║
+╠════════════════════════════════════════════════════════════╣
+  URL:         (DELETE) http://localhost:8443/announcements/211?EntityCode=784324630431
+  Status:      204 No Content
+  Headers:     {
+                 "date": "Thu, 17 Sep 2026 15:17:59 GMT",
+                 "connection": "keep-alive",
+                 "server": "Kestrel",
+                 "x-trace-id": "b6c58f880f1fc5da3801e2f5eeabea14"
+               }
+  Body:        
+╚════════════════════════════════════════════════════════════╝
+    
+ "referenceCode": "48",
+                   "metadata": null,
+                   "embedded": false
+                 },
+                 "statusCode": 200
+               }
+╚════════════════════════════════════════════════════════════╝
+    
+[10:17:58.767] INFO:  
+╔════════════════════════════════════════════════════════════╗
+║ API REQUEST                                                ║
+╠════════════════════════════════════════════════════════════╣
+  URL:         (DELETE) http://localhost:8443/announcements/49/attachments/5583?EntityCode=784324630431
+  Status:      204 No Content
+  Headers:     {
+                 "date": "Thu, 17 Sep 2026 15:17:59 GMT",
+                 "connection": "keep-alive",
+                 "server": "Kestrel",
+                 "x-trace-id": "6f96350ff6b9bec8e61596c0a5322b5e"
+               }
+  Body:        
 ╚════════════════════════════════════════════════════════════╝
     

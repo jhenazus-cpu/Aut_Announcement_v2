@@ -43,6 +43,7 @@ export const test = base.extend<AnnouncementFixtures>({
 });
 
 // Función para validar los valores que se encuentran dentro de items
+// Validar si esto ya no se necesito 
 
 export function expectedItemFields(announcementsResponse: any) {
   if (
@@ -145,6 +146,34 @@ export async function createAnnouncementForTest(
   expect(body.data.id).toBeGreaterThan(0);
   return body.data.id;
 }
+
+//Función que enlaza el adjunto temporalmente y valida 204
+export async function linkAttachmentForTest(
+  request: APIRequestContext,
+  announcementId: string = testConfig.announcementId,
+  attachmentId: string = testConfig.attachmentId,
+): Promise<void> {
+  const response = await request.post(
+    `announcements/${announcementId}/attachments/${attachmentId}?EntityCode=${testConfig.entityCode}`,
+  );
+  await logApi(response, "POST");
+  expect(response.status()).toBe(204);
+}
+
+//Función que desvincula el adjunto y valida 204
+export async function unlinkAttachmentForTest(
+  request: APIRequestContext,
+  announcementId: string = testConfig.announcementId,
+  attachmentId: string = testConfig.attachmentId,
+): Promise<void> {
+  const response = await request.delete(
+    `announcements/${announcementId}/attachments/${attachmentId}?EntityCode=${testConfig.entityCode}`,
+  );
+  await logApi(response, "DELETE");
+  expect(response.status()).toBe(204);
+}
+
+///Pendiente validar si esto ya no se necesita en el codigo
 export const validateAttachmentDetailContract = (
   GetDetailsAttachmentResponse: any,
 ) => {
@@ -187,63 +216,3 @@ export const validateAttachmentDetailContract = (
   // Fecha válida
   expect(Number.isNaN(Date.parse(attachment.uploadedAt))).toBe(false);
 };
-
-/*
-export const getAnnouncementAttachmentsSchema = {
-  type: 'object',
-  required: ['data', 'statusCode'],
-  properties: {
-    statusCode: {
-      type: 'integer'
-    },
-    data: {
-      type: 'object',
-      required: ['items', 'totalCount'],
-      properties: {
-        totalCount: {
-          type: 'integer'
-        },
-        items: {
-          type: 'array',
-          items: {
-            type: 'object',
-            required: [
-              'id',
-              'fileName',
-              'filePath',
-              'sizeInBytes',
-              'contentType',
-              'extension',
-              'uploadedAt',
-              'embedded'
-            ],
-            properties: {
-              id: { type: 'integer' },
-              fileName: { type: 'string' },
-              filePath: { type: 'string' },
-              sizeInBytes: { type: 'integer' },
-              contentType: { type: 'string' },
-              extension: { type: 'string' },
-              uploadedAt: { type: 'string' },
-              embedded: { type: 'boolean' },
-
-              thumbnailPath: {
-                type: ['string', 'null']
-              },
-              categoryCode: {
-                type: ['string', 'null']
-              },
-              referenceCode: {
-                type: ['string', 'null']
-              },
-              metadata: {
-                type: ['object', 'null']
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-};
-*/
