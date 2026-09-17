@@ -1,17 +1,17 @@
 // importa el módulo de prueba de Playwright
 import { test, expect } from "@playwright/test";
-import { logApi } from "../utils/apiLogger";
-import { testConfig } from "../utils/testConfig";
+import { logApi } from "../../utils/apiLogger";
+import { testConfig } from "../../utils/testConfig";
 
 // Importar los tipos de respuesta interfaces
-import { GetDetailsAttachmentResponse } from "../utils/type";
-import { AnnouncementNotFound } from "../utils/typeById";
-import { validateAttachmentDetailContract } from "../utils/tools";
+import { GetDetailsAttachmentResponse } from "../../utils/type";
+import { AnnouncementNotFound } from "../../utils/typeById";
+import { validateAttachmentDetailContract } from "../../utils/tools";
 
 // Importar los Scheman de las respuestas
 import Ajv from "ajv";
-import { getAnnouncementAttachmentDetailSchema } from "../utils/schemas/getAnnouncementAttachmentDetail.schema";
-import { errorSchema } from "../utils/schemas/error.schema";
+import { getAnnouncementAttachmentDetailSchema } from "../../utils/schemas/getAnnouncementAttachmentDetail.schema";
+import { errorSchema } from "../../utils/schemas/error.schema";
 
 //Casos de prueba para obtener el detalle de adjunto
 test.describe("Get Details Attachments API", () => {

@@ -1,12 +1,12 @@
 // importa el módulo de prueba de Playwright
 import { test as base, expect, APIRequestContext } from "@playwright/test";
-import { logApi } from "../utils/apiLogger";
-import { testConfig } from "../utils/testConfig";
+import { logApi } from "../../utils/apiLogger";
+import { testConfig } from "../../utils/testConfig";
 
 // Importar los tipos de respuesta interfaces
-import { UpdateAnnouncementResponse } from "../utils/type";
-import { AnnouncementNotFound } from "../utils/typeById";
-import { test } from "../utils/tools";
+import { UpdateAnnouncementResponse } from "../../utils/type";
+import { AnnouncementNotFound } from "../../utils/typeById";
+import { test } from "../../utils/tools";
 
 // Importar los payloads de prueba
 import {
@@ -17,9 +17,9 @@ import {
 
 // Importar los Scheman de las respuestas
 import Ajv from "ajv";
-import { errorSchema } from "../utils/schemas/error.schema";
-import { updateAnnouncementSchema } from "../utils/schemas/updateAnnouncement.schema";
-import { validationErrorSchema } from "../utils/schemas/validationError.schema";
+import { errorSchema } from "../../utils/schemas/error.schema";
+import { updateAnnouncementSchema } from "../../utils/schemas/updateAnnouncement.schema";
+import { validationErrorSchema } from "../../utils/schemas/validationError.schema";
 
 // Escenarios de prueba para la API de comunicados
 test.describe("Update Announcements API", () => {

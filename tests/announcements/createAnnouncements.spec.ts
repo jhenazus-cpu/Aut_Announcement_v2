@@ -1,17 +1,17 @@
 // importa el módulo de prueba de Playwright
 import { test as base, expect, APIRequestContext } from "@playwright/test";
-import { logApi } from "../utils/apiLogger";
-import { testConfig } from "../utils/testConfig";
+import { logApi } from "../../utils/apiLogger";
+import { testConfig } from "../../utils/testConfig";
 
 // Importar los tipos de respuesta interfaces
-import { createAnnouncementsResponse } from "../utils/type";
-import { AnnouncementNotFound } from "../utils/typeById";
-import { test } from "../utils/tools";
+import { createAnnouncementsResponse } from "../../utils/type";
+import { AnnouncementNotFound } from "../../utils/typeById";
+import { test } from "../../utils/tools";
 
 import Ajv from "ajv";
-import { createAnnouncementSchema } from "../utils/schemas/createAnnouncement.schema";
-import { validationErrorSchema } from "../utils/schemas/validationError.schema";
-import { domainValidationErrorSchema } from "../utils/schemas/domainValidationError.schema";
+import { createAnnouncementSchema } from "../../utils/schemas/createAnnouncement.schema";
+import { validationErrorSchema } from "../../utils/schemas/validationError.schema";
+import { domainValidationErrorSchema } from "../../utils/schemas/domainValidationError.schema";
 
 // Importar los payloads de prueba
 

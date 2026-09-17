@@ -1,17 +1,17 @@
 // importa el módulo de prueba de Playwright
 import { test, expect } from "@playwright/test";
-import { logApi } from "../utils/apiLogger";
-import { testConfig } from "../utils/testConfig";
+import { logApi } from "../../utils/apiLogger";
+import { testConfig } from "../../utils/testConfig";
 
 // Importar los tipos de respuesta interfaces
-import { AnnouncementNotFound } from "../utils/typeById";
+import { AnnouncementNotFound } from "../../utils/typeById";
 
 // Importar los Scheman de las respuestas
 import Ajv from "ajv";
-import { errorSchema } from "../utils/schemas/error.schema";
+import { errorSchema } from "../../utils/schemas/error.schema";
 
 // Importar las funciones
-import { linkAttachmentForTest } from "../utils/tools";
+import { linkAttachmentForTest } from "../../utils/tools";
 
 test.describe("Delete Attachments API", () => {
   //Caso de prueba para eliminar un adjunto de un comunicado

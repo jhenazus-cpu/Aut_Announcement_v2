@@ -1,18 +1,18 @@
 // importa el módulo de prueba de Playwright
 import { test, expect } from "@playwright/test";
-import { logApi } from "../utils/apiLogger";
-import { testConfig } from "../utils/testConfig";
+import { logApi } from "../../utils/apiLogger";
+import { testConfig } from "../../utils/testConfig";
 
 // Importar los tipos de respuesta interfaces
 import {
   AttachmentResponse,
-} from "../utils/type";
-import { AnnouncementNotFound } from "../utils/typeById";
+} from "../../utils/type";
+import { AnnouncementNotFound } from "../../utils/typeById";
 
 // Importar los Scheman de las respuestas
 import Ajv from "ajv";
-import { getAnnouncementAttachmentsSchema } from "../utils/schemas/getAnnouncementAttachments.schema";
-import { errorSchema } from "../utils/schemas/error.schema";
+import { getAnnouncementAttachmentsSchema } from "../../utils/schemas/getAnnouncementAttachments.schema";
+import { errorSchema } from "../../utils/schemas/error.schema";
 
 
 

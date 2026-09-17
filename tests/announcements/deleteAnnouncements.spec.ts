@@ -1,15 +1,15 @@
 // importa el módulo de prueba de Playwright
 import {test as base, expect, APIRequestContext} from '@playwright/test';
-import { logApi } from '../utils/apiLogger';
-import { testConfig } from '../utils/testConfig';
+import { logApi } from '../../utils/apiLogger';
+import { testConfig } from '../../utils/testConfig';
 
 // Importar los tipos de respuesta interfaces
-import { AnnouncementNotFound } from '../utils/typeById';
-import { test } from '../utils/tools';
+import { AnnouncementNotFound } from '../../utils/typeById';
+import { test } from '../../utils/tools';
 
 // Importar los Scheman de las respuestas
 import Ajv from "ajv";
-import { errorSchema } from "../utils/schemas/error.schema";
+import { errorSchema } from "../../utils/schemas/error.schema";
 
 // Escenarios de prueba para la API de comunicados
 test.describe('Delete Announcements API', () => {

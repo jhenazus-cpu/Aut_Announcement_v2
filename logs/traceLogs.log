@@ -1,67 +1,87 @@
-[15:33:41.202] INFO:  
+[16:22:27.360] INFO:  
 ╔════════════════════════════════════════════════════════════╗
 ║ API REQUEST                                                ║
 ╠════════════════════════════════════════════════════════════╣
   URL:         (POST) http://localhost:8443/announcements?EntityCode=784324630431
-  Status:      400 Bad Request
+  Status:      201 Created
   Headers:     {
-                 "date": "Thu, 17 Sep 2026 20:33:41 GMT",
+                 "date": "Thu, 17 Sep 2026 21:22:28 GMT",
                  "content-type": "application/json; charset=utf-8",
                  "transfer-encoding": "chunked",
                  "connection": "keep-alive",
                  "server": "Kestrel",
-                 "x-trace-id": "dc7fd06137d128e8c2a7ac94e08d1355"
+                 "x-trace-id": "632cb6ed7028e3e4aea43d65465ef3c7"
                }
   Body:        {
-                 "error": {
-                   "type": "DOMAIN_VALIDATION",
-                   "code": "HTTP.DOMAIN_VALIDATION",
-                   "message": "Domain validation failed.",
-                   "details": [
+                 "data": {
+                   "id": 245,
+                   "name": "Comunicado desde API prueba nueva de comunicados desde codigo - 1789680147099",
+                   "description": "Esto es una prueba de creación para los comunicados desde código, para validar que la creación de comunicados funcione correctamente desde código y no solo desde postman",
+                   "appliesTo": [
+                     0,
+                     1,
+                     2,
+                     3
+                   ],
+                   "programs": [
                      {
-                       "property": "programs[0].Code",
-                       "errors": [
-                         "Program code is required."
-                       ]
+                       "code": "1331",
+                       "name": ""
                      }
-                   ]
+                   ],
+                   "grades": [],
+                   "startDate": null,
+                   "endDate": null,
+                   "campusSchedules": [],
+                   "isActive": true,
+                   "createdAt": "2026-09-17T21:22:28.0966737Z",
+                   "updatedAt": null,
+                   "period": {
+                     "id": 21,
+                     "name": ""
+                   }
                  },
-                 "statusCode": 400
+                 "statusCode": 201
                }
-╚════════════════════════════════════════════════════�[15:33:41.[15:33:41.381] INFO:  [15:33:41.461] INFO:  
+╚════════════════════════════════════════════════════════════╝
+    
+[16:22:27.646] INFO:  
 ╔════════════════════════════════════════════════════════════╗
 ║ API REQUEST                                                ║
 ╠════════════════════════════════════════════════════════════╣
-  URL:         (POST) http://localhost:8443/announcements?EntityCode=784324630431
-  Status:      400 Bad Request
+  URL:         (DELETE) http://localhost:8443/announcements/245?EntityCode=784324630431
+  Status:      204 No Content
   Headers:     {
-                 "date": "Thu, 17 Sep 2026 20:33:42 GMT",
+                 "date": "Thu, 17 Sep 2026 21:22:28 GMT",
+                 "connection": "keep-alive",
+                 "server": "Kestrel",
+                 "x-trace-id": "34788f9181351d41f22d14a385f2d6cb"
+               }
+  Body:        
+╚════════════════════════════════════════════════════════════╝
+    
+[16:22:27.745] INFO:  
+╔════════════════════════════════════════════════════════════╗
+║ API REQUEST                                                ║
+╠════════════════════════════════════════════════════════════╣
+  URL:         (DELETE) http://localhost:8443/announcements/245?EntityCode=784324630431
+  Status:      404 Not Found
+  Headers:     {
+                 "date": "Thu, 17 Sep 2026 21:22:28 GMT",
                  "content-type": "application/json; charset=utf-8",
                  "transfer-encoding": "chunked",
                  "connection": "keep-alive",
                  "server": "Kestrel",
-                 "x-trace-id": "9916202df9e87ba91d06e7dffb6caddc"
+                 "x-trace-id": "09c59907968937f1d84067e663c2f060"
                }
   Body:        {
                  "error": {
-                   "type": "VALIDATION",
-                   "code": "HTTP.VALIDATION",
-                   "message": "Validation failed",
-                   "details": [
-                     {
-                       "property": "programs",
-                       "errors": [
-                         "The following programs either do not exist, are not active, or do not have an associated curriculum: 325741."
-                       ],
-                       "attributes": {
-                         "missing": [
-                           "325741"
-                         ]
-                       }
-                     }
-                   ]
+                   "type": "NOT_FOUND",
+                   "code": "HTTP.NOT_FOUND",
+                   "message": "Announcement with id '245' was not found.",
+                   "details": []
                  },
-                 "statusCode": 400
+                 "statusCode": 404
                }
 ╚════════════════════════════════════════════════════════════╝
     
