@@ -24,6 +24,7 @@ import createAnnouncementWithoutDescription from "@create/createAnnouncementWith
 import createAnnouncementWithGradeIdNull from "@create/createAnnouncementWithGradeIdNull.json";
 import createAnnouncementWithInvalidIsActive from "@create/createAnnouncementWithInvalidIsActive.json";
 import createAnnouncementWithoutNameAndDescription from "@create/createAnnouncementWithoutNameAndDescription.json";
+import createAnnouncementWithIncorrectPublicationDates from "@create/createAnnouncementWithIncorrectPublicationDates.json";
 
 // Escenarios de prueba para la API de comunicados
 test.describe("Create Announcements API", () => {
@@ -269,6 +270,33 @@ test.describe("Create Announcements API", () => {
     expect(AnnouncementNotFound.error.details[0].property).toBe("dateRange");
     expect(AnnouncementNotFound.error.details[0].errors[0]).toBe(
       "Start date must be greater than or equal to today.",
+    );
+  });
+
+    // Caso de prueba para crear un nuevo comunicado con fechas de publicación incorrectas
+  test("Create ad with incorrect publication dates", async ({ request }) => {
+    const requestOptions = {
+      data: createAnnouncementWithIncorrectPublicationDates,
+    };
+
+    const ajv = new Ajv();
+    const validateSchema = ajv.compile(domainValidationErrorSchema);
+
+    const response = await request.post(
+      `announcements?EntityCode=${testConfig.entityCode}`,
+      requestOptions,
+    );
+    await logApi(response, "POST");
+    await expect(response.status()).toBe(400);
+    const AnnouncementNotFound =
+      (await response.json()) as AnnouncementNotFound;
+
+    //Validar la estructura de la respuesta
+    expect(validateSchema(AnnouncementNotFound)).toBeTruthy();
+
+    expect(AnnouncementNotFound.error.details[0].property).toBe("dateRange");
+    expect(AnnouncementNotFound.error.details[0].errors[0]).toBe(
+      "End date must be greater than or equal to start date.",
     );
   });
 });

@@ -15,6 +15,7 @@ import updateAnnouncementWithoutValueAppliesTo from "@update/updateAnnouncementW
 
 // Importar los Scheman de las respuestas
 import Ajv from "ajv";
+import { errorSchema } from "../utils/schemas/error.schema";
 import { updateAnnouncementSchema } from "../utils/schemas/updateAnnouncement.schema";
 import { validationErrorSchema } from "../utils/schemas/validationError.schema";
 
@@ -103,6 +104,38 @@ test.describe("Update Announcements API", () => {
     expect(AnnouncementNotFound.error.details[0].property).toBe("appliesTo");
     expect(AnnouncementNotFound.error.details[0].errors[0]).toBe(
       "AppliesTo must contain at least one value.",
+    );
+  });
+
+    //Modificar información de un comunicado no existente
+  test("Update announcement id not found", async ({
+    request,
+  }) => {
+    const requestOptions = {
+        data: updateAnnouncement,
+    };
+
+    const ajv = new Ajv();
+      const validateSchema = ajv.compile(errorSchema);
+
+    const response = await request.put(
+        `announcements/${testConfig.notFoundAnnouncementId}?EntityCode=${testConfig.entityCode}`,
+      requestOptions,
+    );
+    await logApi(response, "PUT");
+      await expect(response.status()).toBe(404);
+      expect(response.headers()["content-type"]).toContain("application/json");
+
+    const AnnouncementNotFound =
+      (await response.json()) as AnnouncementNotFound;
+
+    //Validar la estructura de la respuesta
+    expect(validateSchema(AnnouncementNotFound)).toBeTruthy();
+
+      expect(AnnouncementNotFound.error.type).toBe("NOT_FOUND");
+      expect(AnnouncementNotFound.error.code).toBe("HTTP.NOT_FOUND");
+      expect(AnnouncementNotFound.error.message).toBe(
+        `Announcement with id '${testConfig.notFoundAnnouncementId}' was not found.`,
     );
   });
 });

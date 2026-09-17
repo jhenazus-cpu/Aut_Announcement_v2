@@ -1,0 +1,23 @@
+{
+  "name": "Comunicado desde API prueba nueva de comunicados desde codigo",
+  "description": "Esto es una prueba de creación para los comunicados desde código, para validar que la creación de comunicados funcione correctamente desde código y no solo desde postman",
+  "appliesTo": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "programs": [
+    {
+      "code": "1331"
+    }
+  ],
+  "campusSchedules": [
+    1
+  ],
+  "startDate": "2026-09-26",
+  "endDate": "2026-09-15",
+  "isActive": true,
+  "periodId": 21,
+  "userPersonCode": null
+}

@@ -124,6 +124,66 @@ test.describe("Announcements API", () => {
       );
     }
   });
+  
+  // Caso de prueba para obtener los comunicados teniendo en cuenta la información que se manda en PageIndex and PageSize.
+  test("Get different ad pages using PageIndex and PageSize.", async ({
+    request,
+  }) => {
+    const requestOptions = {
+      params: {
+        PageIndex: "0",
+        PageSize: "10",
+      },
+    };
+
+    const ajv = new Ajv();
+    const validateSchema = ajv.compile(getAllAnnouncementsSchema);
+
+    const response = await request.get(
+      `announcements?EntityCode=${testConfig.entityCode}`,
+      requestOptions,
+    );
+    await logApi(response, "GET");
+    await expect(response).toBeOK();
+    const announcementsResponse =
+      (await response.json()) as announcementsResponse;
+
+    //Validar la estructura de la respuesta
+    expect(validateSchema(announcementsResponse)).toBeTruthy();
+
+    // Verificar que la respuesta contenga los campos esperados
+    //expectedItemFields(announcementsResponse);
+  });
+
+  // Caso de prueba para obtener los comunicados por fecha de inicio
+  test('Should return announcements filtered by startDate', async ({ request }) => {
+    
+    const requestOptions = {
+      params: {
+        startDate: "2026-09-08",
+        endDate: "2026-09-11",
+      },
+    };
+
+    const ajv = new Ajv();
+    const validateSchema = ajv.compile(getAllAnnouncementsSchema);
+
+    const response = await request.get(
+      `announcements?EntityCode=${testConfig.entityCode}`,
+      requestOptions,
+    );
+
+    await logApi(response, "GET");
+    await expect(response).toBeOK();
+
+    const announcementsResponse =
+      (await response.json()) as announcementsResponse;
+
+    //Validar la estructura de la respuesta
+    expect(validateSchema(announcementsResponse)).toBeTruthy();
+
+});
+
 
   // Caso de prueba para obtener un comunicado por ID que no existe
   test("Get announcement by ID not found", async ({ request }) => {
