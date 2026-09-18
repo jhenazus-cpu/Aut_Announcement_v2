@@ -12,6 +12,7 @@ import Ajv from "ajv";
 import { createAnnouncementSchema } from "../../utils/schemas/createAnnouncement.schema";
 import { validationErrorSchema } from "../../utils/schemas/validationError.schema";
 import { domainValidationErrorSchema } from "../../utils/schemas/domainValidationError.schema";
+import { tenantValidationErrorSchema } from "../../utils/schemas/tenantValidationError.schema";
 
 // Importar los payloads de prueba
 
@@ -203,7 +204,7 @@ test.describe("Create Announcements API", () => {
     );
   });
 
-    // Caso de prueba para crear un nuevo comunicado con grados no compatible con la base de datos
+  // Caso de prueba para crear un nuevo comunicado con grados no compatible con la base de datos
   test("create Announcement With Grade Id Invalide", async ({ request }) => {
     const requestOptions = {
       data: createAnnouncementWithGradeIdInvalide,
@@ -320,7 +321,9 @@ test.describe("Create Announcements API", () => {
   });
 
   // Caso de prueba para crear un nuevo comunicado con fechas de publicación incorrectas
-  test("Create announcement with incorrect publication dates", async ({ request }) => {
+  test("Create announcement with incorrect publication dates", async ({
+    request,
+  }) => {
     const requestOptions = {
       data: createAnnouncementWithIncorrectPublicationDates,
     };
@@ -373,7 +376,7 @@ test.describe("Create Announcements API", () => {
     );
   });
 
-    // Caso de prueba para crear un nuevo comunicado con nombre que no cumple la longuitud permitida
+  // Caso de prueba para crear un nuevo comunicado con nombre que no cumple la longuitud permitida
   test("Create announcement with long name", async ({ request }) => {
     const requestOptions = {
       data: createAnnouncementWithLongName,
@@ -398,7 +401,7 @@ test.describe("Create Announcements API", () => {
     expect(AnnouncementNotFound.error.details[0].errors[0]).toBe(
       `Name must not exceed 500 characters.`,
     );
-  }); 
+  });
 
   // Caso de prueba para crear un nuevo comunicado con fechas de publicación conformato incorrecto
   test("create Announcemen tWith Invalid Date Format", async ({ request }) => {
@@ -427,8 +430,10 @@ test.describe("Create Announcements API", () => {
     );
   });
 
-    // Caso de prueba para crear un nuevo comunicado con fechas de publicación que no se encuentran en el calendario
-  test("create Announcement With Invalid Calendar Date", async ({ request }) => {
+  // Caso de prueba para crear un nuevo comunicado con fechas de publicación que no se encuentran en el calendario
+  test("create Announcement With Invalid Calendar Date", async ({
+    request,
+  }) => {
     const requestOptions = {
       data: createAnnouncementWithInvalidCalendarDate,
     };
@@ -454,4 +459,27 @@ test.describe("Create Announcements API", () => {
     );
   });
 
+  // Caso de prueba para crear un nuevo comunicado sin enviar el código de entidad
+  test("create announcement without EntityCode", async ({ request }) => {
+    const requestOptions = {
+      data: createAnnouncement,
+    };
+
+    const ajv = new Ajv();
+    const validateSchema = ajv.compile(tenantValidationErrorSchema);
+
+    const response = await request.post("announcements", requestOptions);
+
+    await logApi(response, "POST");
+    await expect(response.status()).toBe(400);
+
+    const announcementError = (await response.json()) as AnnouncementNotFound;
+
+    expect(validateSchema(announcementError)).toBeTruthy();
+
+    expect(announcementError.error.message).toBe(
+      `A tenant code is required as the 'EntityCode' query parameter or the 'X-Entity-Code' header.`,
+    );
+    
+  });
 });
