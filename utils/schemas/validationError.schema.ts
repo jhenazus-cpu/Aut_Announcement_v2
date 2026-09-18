@@ -72,20 +72,19 @@ export const validationErrorSchema = {
                   type: 'string'
                 }
               },
-
               attributes: {
                 type: 'object',
-
                 properties: {
                   missing: {
                     type: 'array',
-
                     items: {
-                      type: 'string'
+                      anyOf: [
+                        { type: 'string' },
+                        { type: 'number' }
+                      ]
                     }
                   }
                 },
-
                 additionalProperties: true
               }
             }

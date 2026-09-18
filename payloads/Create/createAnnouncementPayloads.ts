@@ -56,6 +56,12 @@ export const createAnnouncementWithGradeIdNull = {
   campusSchedules: [{ id: 1, name: "Principal - Mañana" }],
 };
 
+export const createAnnouncementWithGradeIdInvalide = {
+  ...baseAnnouncement,
+  grades: [{ id: 1 }],
+  campusSchedules: [{ id: 1, name: "Principal - Mañana" }],
+};
+
 export const createAnnouncementWithInvalidIsActive = {
   ...baseAnnouncement,
   campusSchedules: [{ id: 1, name: "Principal - Mañana" }],
@@ -70,14 +76,43 @@ export const createAnnouncementWithoutNameAndDescription = {
   campusSchedules: [{ id: 1, name: "Principal - Mañana" }],
 };
 
+const today = new Date();
+const startDate = new Date(today);
+const endDate = new Date(today);
+
+endDate.setDate(endDate.getDate() - 1);
+
+const formatDate = (date: Date) => date.toISOString().slice(0, 10);
+
 export const createAnnouncementWithIncorrectPublicationDates = {
   ...baseAnnouncement,
-  startDate: "2026-09-26",
-  endDate: "2026-09-15",
+  startDate: formatDate(startDate),
+  endDate: formatDate(endDate),
 };
 
 export const createAnnouncementWithInactiveProgram = {
   ...baseAnnouncement,
   programs: [{ code: "325741"}],
   campusSchedules: [{ id: 1, name: "Principal - Mañana" }],
+};
+
+const longName = "a".repeat(501);
+
+export const createAnnouncementWithLongName = {
+  ...baseAnnouncement,
+  name: longName,
+  programs: [{ code: "1331", name: "Pruebas de Software JCPM" }],
+  campusSchedules: [{ id: 1, name: "Principal - Mañana" }],
+};
+
+export const createAnnouncementWithInvalidDateFormat = {
+  ...baseAnnouncement,
+  startDate: "2026/09/26",
+  endDate: "2026/09/30",
+};
+
+export const createAnnouncementWithInvalidCalendarDate = {
+  ...baseAnnouncement,
+  startDate: "2026-02-30",
+  endDate: "2026-03-05",
 };

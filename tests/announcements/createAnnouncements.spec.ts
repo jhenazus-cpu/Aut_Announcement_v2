@@ -27,6 +27,10 @@ import {
   createAnnouncementWithoutNameAndDescription,
   createAnnouncementWithIncorrectPublicationDates,
   createAnnouncementWithInactiveProgram,
+  createAnnouncementWithLongName,
+  createAnnouncementWithInvalidDateFormat,
+  createAnnouncementWithInvalidCalendarDate,
+  createAnnouncementWithGradeIdInvalide,
 } from "@create/createAnnouncementPayloads";
 
 // Escenarios de prueba para la API de comunicados
@@ -199,6 +203,33 @@ test.describe("Create Announcements API", () => {
     );
   });
 
+    // Caso de prueba para crear un nuevo comunicado con grados no compatible con la base de datos
+  test("create Announcement With Grade Id Invalide", async ({ request }) => {
+    const requestOptions = {
+      data: createAnnouncementWithGradeIdInvalide,
+    };
+
+    const ajv = new Ajv();
+    const validateSchema = ajv.compile(validationErrorSchema);
+
+    const response = await request.post(
+      `announcements?EntityCode=${testConfig.entityCode}`,
+      requestOptions,
+    );
+    await logApi(response, "POST");
+    await expect(response.status()).toBe(400);
+    const AnnouncementNotFound =
+      (await response.json()) as AnnouncementNotFound;
+
+    //Validar la estructura de la respuesta
+    expect(validateSchema(AnnouncementNotFound)).toBeTruthy();
+
+    expect(AnnouncementNotFound.error.details[0].property).toBe("grades");
+    expect(AnnouncementNotFound.error.details[0].errors[0]).toBe(
+      `The following grades do not exist or are not active: ${createAnnouncementWithGradeIdInvalide.grades[0].id}.`,
+    );
+  });
+
   // Caso de prueba para crear un nuevo comunicado con un valor no válido en isActive en el body de la solicitud
   test("Create announcement with invalid isActive value", async ({
     request,
@@ -289,7 +320,7 @@ test.describe("Create Announcements API", () => {
   });
 
   // Caso de prueba para crear un nuevo comunicado con fechas de publicación incorrectas
-  test("Create ad with incorrect publication dates", async ({ request }) => {
+  test("Create announcement with incorrect publication dates", async ({ request }) => {
     const requestOptions = {
       data: createAnnouncementWithIncorrectPublicationDates,
     };
@@ -316,7 +347,7 @@ test.describe("Create Announcements API", () => {
   });
 
   // Caso de prueba para crear un nuevo comunicado con programa inactivo
-  test("create a statement with inactive program", async ({ request }) => {
+  test("create a announcement with inactive program", async ({ request }) => {
     const requestOptions = {
       data: createAnnouncementWithInactiveProgram,
     };
@@ -341,4 +372,86 @@ test.describe("Create Announcements API", () => {
       `The following programs either do not exist, are not active, or do not have an associated curriculum: ${createAnnouncementWithInactiveProgram.programs[0].code}.`,
     );
   });
+
+    // Caso de prueba para crear un nuevo comunicado con nombre que no cumple la longuitud permitida
+  test("Create announcement with long name", async ({ request }) => {
+    const requestOptions = {
+      data: createAnnouncementWithLongName,
+    };
+
+    const ajv = new Ajv();
+    const validateSchema = ajv.compile(validationErrorSchema);
+
+    const response = await request.post(
+      `announcements?EntityCode=${testConfig.entityCode}`,
+      requestOptions,
+    );
+    await logApi(response, "POST");
+    await expect(response.status()).toBe(400);
+    const AnnouncementNotFound =
+      (await response.json()) as AnnouncementNotFound;
+
+    //Validar la estructura de la respuesta
+    expect(validateSchema(AnnouncementNotFound)).toBeTruthy();
+
+    expect(AnnouncementNotFound.error.details[0].property).toBe("name");
+    expect(AnnouncementNotFound.error.details[0].errors[0]).toBe(
+      `Name must not exceed 500 characters.`,
+    );
+  }); 
+
+  // Caso de prueba para crear un nuevo comunicado con fechas de publicación conformato incorrecto
+  test("create Announcemen tWith Invalid Date Format", async ({ request }) => {
+    const requestOptions = {
+      data: createAnnouncementWithInvalidDateFormat,
+    };
+
+    const ajv = new Ajv();
+    const validateSchema = ajv.compile(validationErrorSchema);
+
+    const response = await request.post(
+      `announcements?EntityCode=${testConfig.entityCode}`,
+      requestOptions,
+    );
+    await logApi(response, "POST");
+    await expect(response.status()).toBe(400);
+    const AnnouncementNotFound =
+      (await response.json()) as AnnouncementNotFound;
+
+    //Validar la estructura de la respuesta
+    expect(validateSchema(AnnouncementNotFound)).toBeTruthy();
+
+    expect(AnnouncementNotFound.error.details[0].property).toBe("startDate");
+    expect(AnnouncementNotFound.error.details[0].errors[0]).toBe(
+      `Invalid JSON format.`,
+    );
+  });
+
+    // Caso de prueba para crear un nuevo comunicado con fechas de publicación que no se encuentran en el calendario
+  test("create Announcement With Invalid Calendar Date", async ({ request }) => {
+    const requestOptions = {
+      data: createAnnouncementWithInvalidCalendarDate,
+    };
+
+    const ajv = new Ajv();
+    const validateSchema = ajv.compile(validationErrorSchema);
+
+    const response = await request.post(
+      `announcements?EntityCode=${testConfig.entityCode}`,
+      requestOptions,
+    );
+    await logApi(response, "POST");
+    await expect(response.status()).toBe(400);
+    const AnnouncementNotFound =
+      (await response.json()) as AnnouncementNotFound;
+
+    //Validar la estructura de la respuesta
+    expect(validateSchema(AnnouncementNotFound)).toBeTruthy();
+
+    expect(AnnouncementNotFound.error.details[0].property).toBe("startDate");
+    expect(AnnouncementNotFound.error.details[0].errors[0]).toBe(
+      `Invalid JSON format.`,
+    );
+  });
+
 });
